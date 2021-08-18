@@ -1,9 +1,10 @@
 import React from 'react';
+import Grid from '@material-ui/core/Grid';
 
 export default function Header() {
   return (
-    <div>
-      <h1>Contacts</h1>
-    </div>
+    <Grid item id='contact' component='section'>
+      <h2>Contact</h2>
+    </Grid>
   );
 }
