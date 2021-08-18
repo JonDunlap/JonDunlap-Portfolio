@@ -1,5 +1,6 @@
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Grid from '@material-ui/core/Grid';
 
 import Header from './components/header';
 import Introduction from './components/introduction';
@@ -13,10 +14,17 @@ function App() {
     <>
       <CssBaseline />
       <Container>
-        <Header />
-        <Introduction />
-        <Projects />
-        <Contact />
+        <Grid
+          container
+          direction='column'
+          justifyContent='center'
+          alignItems='flex-start'
+        >
+          <Header />
+          <Introduction />
+          <Projects />
+          <Contact />
+        </Grid>
       </Container>
     </>
   );
