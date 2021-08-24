@@ -2,11 +2,11 @@
 .link {
   display: block;
   padding: 1em 2em;
+  color: var(--text-color);
 }
 
 .link:hover {
-  color: green;
-  text-decoration: none;
+  color: var(--terminal-color);
 }
 
 .header {

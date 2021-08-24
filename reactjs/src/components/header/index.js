@@ -8,6 +8,7 @@ export default function Header() {
   return (
     <Grid
       component='header'
+      item
       container
       direction='row'
       justifyContent='flex-end'
@@ -21,13 +22,28 @@ export default function Header() {
         justifyContent='flex-end'
         alignItems='center'
       >
-        <Link href='#about' className={styles.link} underline='none'>
+        <Link
+          href='#about'
+          className={styles.link}
+          color='inherit'
+          underline='none'
+        >
           About
         </Link>
-        <Link href='#projects' className={styles.link} underline='none'>
+        <Link
+          href='#about'
+          className={styles.link}
+          color='inherit'
+          underline='none'
+        >
           Projects
         </Link>
-        <Link href='#contact' className={styles.link} underline='none'>
+        <Link
+          href='#about'
+          className={styles.link}
+          color='inherit'
+          underline='none'
+        >
           Contact
         </Link>
       </Grid>
