@@ -14,6 +14,7 @@ export default function Header() {
       justifyContent='flex-end'
       alignItems='center'
       className={styles.header}
+      id='top-anchor'
     >
       <Grid
         component='nav'
