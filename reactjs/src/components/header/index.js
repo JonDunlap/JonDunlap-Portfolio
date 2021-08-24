@@ -31,7 +31,7 @@ export default function Header() {
           About
         </Link>
         <Link
-          href='#about'
+          href='#projects'
           className={styles.link}
           color='inherit'
           underline='none'
@@ -39,7 +39,7 @@ export default function Header() {
           Projects
         </Link>
         <Link
-          href='#about'
+          href='#contact'
           className={styles.link}
           color='inherit'
           underline='none'
