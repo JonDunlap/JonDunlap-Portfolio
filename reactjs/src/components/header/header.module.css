@@ -1,12 +1,5 @@
-/* TODO - set font and link styles and import them here */
 .link {
-  display: block;
-  padding: 1em 2em;
-  color: var(--text-color);
-}
-
-.link:hover {
-  color: var(--terminal-color);
+  composes: link from '../../App.css';
 }
 
 .header {
