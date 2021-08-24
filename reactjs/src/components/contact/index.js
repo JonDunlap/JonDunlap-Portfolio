@@ -28,7 +28,7 @@ export default function Header() {
       >
         <Grid item>
           <Link
-            href='#text-buttons'
+            href='mailto:jon@jondunlap.com?subject=Mail from Jon Dunlap portfolio site'
             className={styles.link}
             color='inherit'
             underline='none'
