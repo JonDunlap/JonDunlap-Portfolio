@@ -38,9 +38,7 @@ export default function App() {
     threshold: 100,
   });
   const handleClick = (event) => {
-    const anchor = (event.target.ownerDocument || document).querySelector(
-      '#top-anchor'
-    );
+    const anchor = document.querySelector('#top-anchor');
 
     if (anchor) {
       anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
