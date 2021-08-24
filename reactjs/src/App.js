@@ -1,5 +1,4 @@
 import Container from '@material-ui/core/Container';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 
 import Header from './components/header';
@@ -12,13 +11,13 @@ import './App.css';
 function App() {
   return (
     <>
-      <CssBaseline />
       <Container>
         <Grid
           container
           direction='column'
           justifyContent='center'
           alignItems='flex-start'
+          spacing={4}
         >
           <Header />
           <Introduction />
