@@ -17,15 +17,17 @@ export default function Header() {
       <Grid item component='h1'>
         Hello World!
       </Grid>
+
       <Grid item container>
-        {/* TODO - change to 2 separate grid items for mobile view */}
         <Grid item component='h2'>
           My Name Is:
         </Grid>
+
         <Grid item component='h2'>
           Jonathan Dunlap<span className={styles.caret}>|</span>
         </Grid>
       </Grid>
+
       <Grid item component='h3'>
         Web Developer
       </Grid>
