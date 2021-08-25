@@ -31,14 +31,7 @@ export default function Header() {
         >
           About
         </Link>
-        <Link
-          href='#projects'
-          className={styles.link}
-          color='inherit'
-          underline='none'
-        >
-          Projects
-        </Link>
+
         <Link
           href='#contact'
           className={styles.link}
@@ -46,6 +39,17 @@ export default function Header() {
           underline='none'
         >
           Contact
+        </Link>
+
+        <Link
+          href='https://standardresume.co/r/jondunlap'
+          target='_blank'
+          rel='noopener noreferrer'
+          className={styles.link}
+          color='inherit'
+          underline='none'
+        >
+          Résumé
         </Link>
       </Grid>
     </Grid>
