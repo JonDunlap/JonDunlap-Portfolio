@@ -9,32 +9,18 @@ h3 {
   font-family: var(--secondary-font-family);
 }
 
-.typewriter {
-  color: var(--terminal-color);
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: 0.15em solid var(--text-color); /* The typewriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  letter-spacing: 0.1em; /* Adjust as needed */
-  animation: typing 3.5s steps(30, end), blink-caret 1s step-end infinite;
-}
-
-/* The typing effect */
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+.caret {
+  color: var(--text-color);
+  animation: blink-caret 1s step-end infinite;
 }
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
   from,
   to {
-    border-color: transparent;
+    color: transparent;
   }
   50% {
-    border-color: var(--text-color);
+    color: var(--text-color);
   }
 }
