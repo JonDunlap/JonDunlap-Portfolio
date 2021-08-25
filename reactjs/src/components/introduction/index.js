@@ -12,12 +12,12 @@ export default function Header() {
       justifyContent='flex-start'
       alignItems='flex-start'
       spacing={1}
-      id='about'
       component='section'
     >
       <Grid item component='h1'>
         Hello World!
       </Grid>
+      {/* TODO - change to 2 separate grid items for mobile view */}
       <Grid item component='h2' className={styles.typewriter}>
         My Name Is: Jonathan Dunlap
       </Grid>
