@@ -1,7 +1,3 @@
-.link {
-  composes: link from '../../App.css';
-}
-
 .header {
   margin-top: 1em;
 }
