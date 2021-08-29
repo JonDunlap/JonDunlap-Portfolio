@@ -17,7 +17,7 @@ export default function HamburgerMenu({ children }) {
   };
 
   return (
-    <div>
+    <nav>
       <IconButton
         aria-label='open navigation'
         aria-controls='menu-navigation'
@@ -39,6 +39,6 @@ export default function HamburgerMenu({ children }) {
       >
         {children}
       </Menu>
-    </div>
+    </nav>
   );
 }
