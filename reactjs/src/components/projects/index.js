@@ -247,7 +247,7 @@ export default function Header() {
                 <Typography paragraph variant='body2' color='textSecondary'>
                   This project was for class and it was my first real project
                   making use of Node.js and Express.js. This was the first
-                  project were we built out a server for handling the API as
+                  project where we built out a server for handling the API as
                   well as a web server for the front end. The first step of this
                   project was to design the branding and theme that would be
                   used throughout the front end, then we designed and built out
