@@ -1,6 +1,10 @@
 import React from 'react';
+
 import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
+import Hidden from '@material-ui/core/Hidden';
+
+import NavLinks from '../navLinks';
+import HamburgerMenu from '../hamburgerMenu';
 
 import * as styles from './header.module.css';
 
@@ -8,29 +12,33 @@ export default function Header() {
   return (
     <Grid
       component='header'
+      item
       container
       direction='row'
       justifyContent='flex-end'
       alignItems='center'
       className={styles.header}
+      id='top-anchor'
     >
-      <Grid
-        component='nav'
-        container
-        direction='row'
-        justifyContent='flex-end'
-        alignItems='center'
-      >
-        <Link href='#about' className={styles.link} underline='none'>
-          About
-        </Link>
-        <Link href='#projects' className={styles.link} underline='none'>
-          Projects
-        </Link>
-        <Link href='#contact' className={styles.link} underline='none'>
-          Contact
-        </Link>
-      </Grid>
+      {/* Nav for small and up screens */}
+      <Hidden xsDown>
+        <Grid
+          component='nav'
+          container
+          direction='row'
+          justifyContent='flex-end'
+          alignItems='center'
+        >
+          <NavLinks />
+        </Grid>
+      </Hidden>
+
+      {/* Nav for small screens */}
+      <Hidden smUp>
+        <HamburgerMenu>
+          <NavLinks />
+        </HamburgerMenu>
+      </Hidden>
     </Grid>
   );
 }

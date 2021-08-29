@@ -1,33 +1,30 @@
 import Container from '@material-ui/core/Container';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 
+import About from './components/about';
+import Contact from './components/contact';
 import Header from './components/header';
 import Introduction from './components/introduction';
 import Projects from './components/projects';
-import Contact from './components/contact';
+import ScrollTop from './components/scrollTop';
 
 import './App.css';
 
-function App() {
+export default function App() {
   return (
     <>
-      <CssBaseline />
       <Container>
-        <Grid
-          container
-          direction='column'
-          justifyContent='center'
-          alignItems='flex-start'
-        >
+        <Grid container direction='column' spacing={4}>
           <Header />
-          <Introduction />
-          <Projects />
+          <Grid item container component='main' spacing={4}>
+            <Introduction />
+            <Projects />
+            <About />
+          </Grid>
           <Contact />
         </Grid>
       </Container>
+      <ScrollTop />
     </>
   );
 }
-
-export default App;

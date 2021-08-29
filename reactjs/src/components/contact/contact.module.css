@@ -1,0 +1,7 @@
+.link {
+  composes: link from '../../App.css';
+}
+
+.divider {
+  background-color: var(--text-color);
+}

@@ -1,10 +1,28 @@
+/* 
+************ COLORS ***********
+*/
+:root {
+  --terminal-color: green;
+  --text-color: #fff;
+}
+
+/* 
+************ FONTS ***********
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Source+Code+Pro&display=swap');
+:root {
+  --default-font-family: 'Source Code Pro', monospace;
+  --secondary-font-family: 'Roboto Mono', monospace;
+  --default-font: 200 18px/1.25em var(--default-font-family);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font: var(--default-font);
+  color: var(--text-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #000;
 }
 
 code {
