@@ -1,6 +1,10 @@
 import React from 'react';
+
 import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
+import Hidden from '@material-ui/core/Hidden';
+
+import NavLinks from '../navLinks';
+import HamburgerMenu from '../hamburgerMenu';
 
 import * as styles from './header.module.css';
 
@@ -16,42 +20,25 @@ export default function Header() {
       className={styles.header}
       id='top-anchor'
     >
-      <Grid
-        component='nav'
-        container
-        direction='row'
-        justifyContent='flex-end'
-        alignItems='center'
-      >
-        <Link
-          href='#about'
-          className={styles.link}
-          color='inherit'
-          underline='none'
+      {/* Nav for small and up screens */}
+      <Hidden xsDown>
+        <Grid
+          component='nav'
+          container
+          direction='row'
+          justifyContent='flex-end'
+          alignItems='center'
         >
-          About
-        </Link>
+          <NavLinks />
+        </Grid>
+      </Hidden>
 
-        <Link
-          href='#contact'
-          className={styles.link}
-          color='inherit'
-          underline='none'
-        >
-          Contact
-        </Link>
-
-        <Link
-          href='https://standardresume.co/r/jondunlap'
-          target='_blank'
-          rel='noopener noreferrer'
-          className={styles.link}
-          color='inherit'
-          underline='none'
-        >
-          Résumé
-        </Link>
-      </Grid>
+      {/* Nav for small screens */}
+      <Hidden smUp>
+        <HamburgerMenu>
+          <NavLinks />
+        </HamburgerMenu>
+      </Hidden>
     </Grid>
   );
 }
