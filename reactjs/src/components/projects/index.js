@@ -137,6 +137,7 @@ export default function Header() {
                   I began adding components and merging as the project went
                   along.
                 </Typography>
+
                 {/* Outcome of the project */}
                 <Typography paragraph variant='body2'>
                   Outcome:
@@ -152,6 +153,7 @@ export default function Header() {
                   able to set up automatic deployments fulfilling the
                   requirements for a CI/CD pipeline.
                 </Typography>
+
                 {/* Issues with the project */}
                 <Typography paragraph variant='body2'>
                   Issues:
@@ -201,10 +203,12 @@ export default function Header() {
                 Quiz Application (Express | Pug)
               </Typography>
               <Typography variant='body2' color='textSecondary' component='p'>
-                A variation of the quiz application that features two separate
-                servers, one for the REST API and one for the front end. The
-                front end is built using the template engine Pug.js and features
-                JSON web token(JWT) authentication for all protected routes.
+                A RESTful API with public and private routes that allows users
+                to create quizzes with questions and answers. This variation of
+                the quiz application features two separate servers, one for the
+                REST API and one for the front end. The front end is built using
+                the template engine Pug.js and features JSON web token(JWT)
+                authentication for all protected routes.
               </Typography>
             </CardContent>
 
@@ -253,20 +257,22 @@ export default function Header() {
                   we then converted into Pug templates and created the routes
                   for the web server that would show the appropriate pages.
                 </Typography>
+
                 {/* Outcome of the project */}
                 <Typography paragraph variant='body2'>
                   Outcome:
                 </Typography>
                 <Typography paragraph variant='body2' color='textSecondary'>
-                  With the tight integration of the API and web server we were
+                  With the tight integration of the API and web server, we were
                   able to add authenticated routes on both the back and front
-                  end of the application. We also made use of oAuth in the form
+                  ends of the application. We also made use of oAuth in the form
                   of GitHub login and made use of JSON web tokens(JWT) for
                   authentication and authorization on the servers. This is one
                   project that I was particularly proud of since everything came
                   together very nicely and I was able to make the authentication
                   function as intended protecting the routes on the server.
                 </Typography>
+
                 {/* Issues with the project */}
                 <Typography paragraph variant='body2'>
                   Issues:
@@ -315,7 +321,10 @@ export default function Header() {
               <Typography variant='body2' color='textSecondary' component='p'>
                 A RESTful API with public and private routes that allows users
                 to create quizzes with questions and answers. This variation
-                uses React for the front end and Express on the back end.
+                uses the same back end as the previous implementation, but no
+                longer uses the web server and instead features a React front
+                end making use of React PropTypes and a higher order
+                container(HOC) responsible for making API calls.
               </Typography>
             </CardContent>
 
@@ -352,21 +361,43 @@ export default function Header() {
                   Purpose:
                 </Typography>
                 <Typography paragraph variant='body2' color='textSecondary'>
-                  {/* todo */}
+                  This version of the quiz application is essentially identical
+                  to the previous version with the exception of adding React to
+                  handle the front end and no longer using the web server. The
+                  reason I am including it here is that this is the first time
+                  that I have made use of higher order components to handle
+                  interactions with the API server and it is one of the better
+                  examples of making use of React for a single page application.
                 </Typography>
+
                 {/* Outcome of the project */}
                 <Typography paragraph variant='body2'>
                   Outcome:
                 </Typography>
                 <Typography paragraph variant='body2' color='textSecondary'>
-                  {/* todo */}
+                  With the separation of the servers in this instance of the
+                  project, we are now using higher order components to handle
+                  the API interactions with the server and passing the returned
+                  data as props to the main component. Since we are now making
+                  API calls from the browser we also had to implement
+                  cross-origin resource sharing(CORS) to prevent errors when
+                  requesting data from our API. I was able to convert the Pug
+                  templates into React components and to keep the same
+                  functionality in almost all instances.
                 </Typography>
+
                 {/* Issues with the project */}
                 <Typography paragraph variant='body2'>
                   Issues:
                 </Typography>
                 <Typography paragraph variant='body2' color='textSecondary'>
-                  {/* todo */}
+                  This implementation of the application unfortunately loses the
+                  protected routes on the front end and there are some issues
+                  with components not updating properly to change state. This is
+                  something that I would like to revisit eventually as I have
+                  now learned how to add protected routes using Redux for the
+                  front end and could easily implement the same behavior as the
+                  web server version of this application.
                 </Typography>
               </CardContent>
             </Collapse>
