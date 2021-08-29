@@ -7,7 +7,6 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
 import Divider from '@material-ui/core/Divider';
@@ -37,10 +36,18 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header() {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded1, setExpanded1] = React.useState(false);
+  const [expanded2, setExpanded2] = React.useState(false);
+  const [expanded3, setExpanded3] = React.useState(false);
   // method for expanding the content on the card
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
+  const handleExpand1Click = () => {
+    setExpanded1(!expanded1);
+  };
+  const handleExpand2Click = () => {
+    setExpanded2(!expanded2);
+  };
+  const handleExpand3Click = () => {
+    setExpanded3(!expanded3);
   };
 
   return (
@@ -54,7 +61,7 @@ export default function Header() {
         alignItems='flex-start'
         spacing={4}
       >
-        {/* Project #1 */}
+        {/* Restaurant management application */}
         <Grid item xs={12} component='article'>
           <Card>
             {/* Project image */}
@@ -75,14 +82,13 @@ export default function Header() {
                 A RESTful API that is meant for a small restaurant business
                 allowing them to have a customer and staff facing interface.
                 Currently features a minimal React front end for the restaurant
-                management application with a back-end setup for more advanced
-                features.
+                management application with routes on the backend allowing for
+                more advanced features to be added as needed.
               </Typography>
             </CardContent>
 
             {/* Links and expand content buttons */}
             <CardActions>
-              {/* TODO - change to github icon */}
               <IconButton
                 color='inherit'
                 aria-label='open github page'
@@ -95,11 +101,11 @@ export default function Header() {
               {/* Expand card content */}
               <IconButton
                 className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded,
+                  [classes.expandOpen]: expanded1,
                 })}
                 color='inherit'
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
+                onClick={handleExpand1Click}
+                aria-expanded={expanded1}
                 aria-label='show more'
               >
                 <ExpandMoreIcon />
@@ -107,7 +113,7 @@ export default function Header() {
             </CardActions>
 
             {/* Collapsed content, detailed description of project */}
-            <Collapse in={expanded} timeout='auto' unmountOnExit>
+            <Collapse in={expanded1} timeout='auto' unmountOnExit>
               <CardContent>
                 {/* Purpose of the project */}
                 <Typography paragraph variant='body2'>
@@ -177,9 +183,122 @@ export default function Header() {
           </Card>
         </Grid>
 
-        {/* Project #2 */}
+        {/* Quiz app - Pug front end */}
         <Grid item xs={12} sm={6} component='article'>
           <Card>
+            {/* Project image */}
+            <CardMedia
+              component='img'
+              height='140'
+              image={project3}
+              alt='Image of quiz application code'
+              title='Image of quiz application code'
+            />
+
+            {/* Title and short description of project */}
+            <CardContent>
+              <Typography gutterBottom variant='h5' component='h3'>
+                Quiz Application (Express | Pug)
+              </Typography>
+              <Typography variant='body2' color='textSecondary' component='p'>
+                A variation of the quiz application that features two separate
+                servers, one for the REST API and one for the front end. The
+                front end is built using the template engine Pug.js and features
+                JSON web token(JWT) authentication for all protected routes.
+              </Typography>
+            </CardContent>
+
+            {/* Links and expand content buttons */}
+            <CardActions>
+              <IconButton
+                color='inherit'
+                aria-label='open github page'
+                href='https://github.com/ASL-WDD442/asl_quiz_base-JonDunlap/tree/database'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <GitHubIcon />
+              </IconButton>
+              {/* Expand card content */}
+              <IconButton
+                className={clsx(classes.expand, {
+                  [classes.expandOpen]: expanded2,
+                })}
+                color='inherit'
+                onClick={handleExpand2Click}
+                aria-expanded={expanded2}
+                aria-label='show more'
+              >
+                <ExpandMoreIcon />
+              </IconButton>
+            </CardActions>
+
+            {/* Collapsed content, detailed description of project */}
+            <Collapse in={expanded2} timeout='auto' unmountOnExit>
+              <CardContent>
+                {/* Purpose of the project */}
+                <Typography paragraph variant='body2'>
+                  Purpose:
+                </Typography>
+                <Typography paragraph variant='body2' color='textSecondary'>
+                  This project was for class and it was my first real project
+                  making use of Node.js and Express.js. This was the first
+                  project were we built out a server for handling the API as
+                  well as a web server for the front end. The first step of this
+                  project was to design the branding and theme that would be
+                  used throughout the front end, then we designed and built out
+                  the API including the routes and models needed for full CRUD
+                  functionality. Once the API was built out we switched over to
+                  creating the front end, we were provided with HTML files that
+                  we then converted into Pug templates and created the routes
+                  for the web server that would show the appropriate pages.
+                </Typography>
+                {/* Outcome of the project */}
+                <Typography paragraph variant='body2'>
+                  Outcome:
+                </Typography>
+                <Typography paragraph variant='body2' color='textSecondary'>
+                  With the tight integration of the API and web server we were
+                  able to add authenticated routes on both the back and front
+                  end of the application. We also made use of oAuth in the form
+                  of GitHub login and made use of JSON web tokens(JWT) for
+                  authentication and authorization on the servers. This is one
+                  project that I was particularly proud of since everything came
+                  together very nicely and I was able to make the authentication
+                  function as intended protecting the routes on the server.
+                </Typography>
+                {/* Issues with the project */}
+                <Typography paragraph variant='body2'>
+                  Issues:
+                </Typography>
+                <Typography paragraph variant='body2' color='textSecondary'>
+                  Overall, there are very few issues with this implementation of
+                  the application, the styling is not the greatest and is
+                  something I want to continue improving on and there are some
+                  instances where error handling is not working properly and the
+                  whole server will crash depending on what is sent to it.
+                </Typography>
+              </CardContent>
+            </Collapse>
+
+            {/* Divider Line */}
+            <Divider variant='middle' />
+
+            {/* Technologies used */}
+            <CardContent>
+              <Typography variant='body2'>Technologies:</Typography>
+              <Chip variant='outlined' size='small' label='Express' />
+              <Chip variant='outlined' size='small' label='Node.js' />
+              <Chip variant='outlined' size='small' label='PostgreSQL' />
+              <Chip variant='outlined' size='small' label='Pug' />
+            </CardContent>
+          </Card>
+        </Grid>
+
+        {/* Quiz app - React front end */}
+        <Grid item xs={12} sm={6} component='article'>
+          <Card>
+            {/* Project image */}
             <CardMedia
               component='img'
               height='140'
@@ -187,6 +306,8 @@ export default function Header() {
               alt='Image of quiz application code'
               title='Image of quiz application code'
             />
+
+            {/* Title and short description of project */}
             <CardContent>
               <Typography gutterBottom variant='h5' component='h3'>
                 Quiz Application (Express | React)
@@ -197,54 +318,69 @@ export default function Header() {
                 uses React for the front end and Express on the back end.
               </Typography>
             </CardContent>
+
+            {/* Links and expand content buttons */}
             <CardActions>
-              <Button size='small' color='primary'>
-                Code
-              </Button>
+              <IconButton
+                color='inherit'
+                aria-label='open github page'
+                href='https://github.com/ASL-WDD442/asl_quiz_base-JonDunlap/tree/react'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <GitHubIcon />
+              </IconButton>
+              {/* Expand card content */}
+              <IconButton
+                className={clsx(classes.expand, {
+                  [classes.expandOpen]: expanded3,
+                })}
+                color='inherit'
+                onClick={handleExpand3Click}
+                aria-expanded={expanded3}
+                aria-label='show more'
+              >
+                <ExpandMoreIcon />
+              </IconButton>
             </CardActions>
+
+            {/* Collapsed content, detailed description of project */}
+            <Collapse in={expanded3} timeout='auto' unmountOnExit>
+              <CardContent>
+                {/* Purpose of the project */}
+                <Typography paragraph variant='body2'>
+                  Purpose:
+                </Typography>
+                <Typography paragraph variant='body2' color='textSecondary'>
+                  {/* todo */}
+                </Typography>
+                {/* Outcome of the project */}
+                <Typography paragraph variant='body2'>
+                  Outcome:
+                </Typography>
+                <Typography paragraph variant='body2' color='textSecondary'>
+                  {/* todo */}
+                </Typography>
+                {/* Issues with the project */}
+                <Typography paragraph variant='body2'>
+                  Issues:
+                </Typography>
+                <Typography paragraph variant='body2' color='textSecondary'>
+                  {/* todo */}
+                </Typography>
+              </CardContent>
+            </Collapse>
+
+            {/* Divider Line */}
             <Divider variant='middle' />
+
+            {/* Technologies used */}
             <CardContent>
               <Typography variant='body2'>Technologies:</Typography>
               <Chip variant='outlined' size='small' label='Express' />
               <Chip variant='outlined' size='small' label='Node.js' />
               <Chip variant='outlined' size='small' label='PostgreSQL' />
               <Chip variant='outlined' size='small' label='React' />
-            </CardContent>
-          </Card>
-        </Grid>
-
-        {/* Project #3 */}
-        <Grid item xs={12} sm={6} component='article'>
-          <Card>
-            <CardMedia
-              component='img'
-              height='140'
-              image={project3}
-              alt='Image of quiz application code'
-              title='Image of quiz application code'
-            />
-            <CardContent>
-              <Typography gutterBottom variant='h5' component='h3'>
-                Quiz Application (Express | Pug)
-              </Typography>
-              <Typography variant='body2' color='textSecondary' component='p'>
-                A variation of the previous quiz application that features two
-                separate servers, one for the REST API and one for the front
-                end. The front end is built using the template engine Pug.js.
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button size='small' color='primary'>
-                Code
-              </Button>
-            </CardActions>
-            <Divider variant='middle' />
-            <CardContent>
-              <Typography variant='body2'>Technologies:</Typography>
-              <Chip variant='outlined' size='small' label='Express' />
-              <Chip variant='outlined' size='small' label='Node.js' />
-              <Chip variant='outlined' size='small' label='PostgreSQL' />
-              <Chip variant='outlined' size='small' label='Pug' />
             </CardContent>
           </Card>
         </Grid>
