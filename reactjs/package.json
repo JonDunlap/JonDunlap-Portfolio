@@ -30,7 +30,7 @@
       "react-app/jest"
     ]
   },
-  "homepage": "jondunlap.com",
+  "homepage": "https://jondunlap.com",
   "name": "reactjs",
   "private": true,
   "scripts": {
