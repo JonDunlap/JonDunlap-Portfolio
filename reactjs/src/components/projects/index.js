@@ -56,6 +56,149 @@ export default function Header() {
         alignItems='flex-start'
         spacing={4}
       >
+        {/* Quiz app */}
+        <Grid item xs={12} component='article'>
+          <Card>
+            {/* Project image */}
+            <CardMedia
+              component='img'
+              height='140'
+              image={project3}
+              alt='Image of quiz application code'
+              title='Image of quiz application code'
+            />
+
+            {/* Title and short description of project */}
+            <CardContent>
+              <Typography gutterBottom variant='h5' component='h3'>
+                Quiz Application (Express | Pug)
+              </Typography>
+              <Typography variant='body2' color='textSecondary' component='p'>
+                A RESTful API with public and private routes that allows users
+                to create quizzes with questions and answers. The application
+                features two separate servers, one for the REST API and one for
+                the front end, there is also a separate front end that was built
+                for a later assignment using React. The original front end is
+                built using the template engine Pug.js and features JSON web
+                token(JWT) authentication for all protected routes. The second
+                version of the front end uses the same back end as the previous
+                implementation, but no longer uses the web server and instead
+                features a React front end making use of React PropTypes,
+                useEffect, and a higher order component(HOC) responsible for
+                making API calls.
+              </Typography>
+            </CardContent>
+
+            {/* Links and expand content buttons */}
+            <CardActions>
+              <IconButton
+                color='inherit'
+                aria-label='open github page'
+                href='https://github.com/JonDunlap/asl_quiz_base-JonDunlap'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <GitHubIcon />
+              </IconButton>
+              {/* Expand card content */}
+              <IconButton
+                className={clsx(classes.expand, {
+                  [classes.expandOpen]: expanded2,
+                })}
+                color='inherit'
+                onClick={handleExpand2Click}
+                aria-expanded={expanded2}
+                aria-label='show more'
+              >
+                <ExpandMoreIcon />
+              </IconButton>
+            </CardActions>
+
+            {/* Collapsed content, detailed description of project */}
+            <Collapse in={expanded2} timeout='auto' unmountOnExit>
+              <CardContent>
+                {/* Purpose of the project */}
+                <Typography paragraph variant='body2'>
+                  Purpose:
+                </Typography>
+                <Typography paragraph variant='body2' color='textSecondary'>
+                  This project was for class and it was my first real project
+                  making use of Node.js and Express.js. This was the first
+                  project where we built out a server for handling the API as
+                  well as a web server for the front end. The first step of this
+                  project was to design the branding and theme that would be
+                  used throughout the front end, then we designed and built out
+                  the API including the routes and models needed for full CRUD
+                  functionality. Once the API was built out we switched over to
+                  creating the front end, we were provided with HTML files that
+                  we then converted into Pug templates and created the routes
+                  for the web server that would show the appropriate pages. For
+                  a subsequent assignment we converted the front end to React
+                  instead of using the web server. This is also the first time
+                  that I learned and made use of higher order components to
+                  handle separation of concerns for my react components and for
+                  the API interactions.
+                </Typography>
+
+                {/* Outcome of the project */}
+                <Typography paragraph variant='body2'>
+                  Outcome:
+                </Typography>
+                <Typography paragraph variant='body2' color='textSecondary'>
+                  With the tight integration of the API and web server, we were
+                  able to add authenticated routes on both the back and front
+                  ends of the application using Pug to create the page
+                  templates. We also made use of oAuth in the form of GitHub
+                  login and made use of JSON web tokens(JWT) for authentication
+                  and authorization on the servers. This is one project that I
+                  was particularly proud of since everything came together very
+                  nicely and I was able to make the authentication function as
+                  intended protecting the routes on the server. For the React
+                  version, with the separation of the servers, we are now using
+                  higher order components to handle the API interactions with
+                  the server and passing the returned data as props to the main
+                  component. Since we are now making API calls from the browser
+                  we also had to implement cross-origin resource sharing(CORS)
+                  to prevent errors when requesting data from our API. I was
+                  able to convert the Pug templates into React components and to
+                  keep the same functionality in almost all instances.
+                </Typography>
+
+                {/* Issues with the project */}
+                <Typography paragraph variant='body2'>
+                  Issues:
+                </Typography>
+                <Typography paragraph variant='body2' color='textSecondary'>
+                  Overall, there are very few issues, the styling is not the
+                  greatest and is something I want to continue improving on,
+                  there are also some instances where error handling is not
+                  working properly and the whole server will crash depending on
+                  what is sent to it. The React version of the application
+                  unfortunately loses the protected routes on the front end and
+                  there are some issues with components not updating properly to
+                  change state. This is something that I would like to revisit
+                  eventually as I have now learned how to add protected routes
+                  using Redux for the front end and could easily implement the
+                  same behavior as the web server version of this application.
+                </Typography>
+              </CardContent>
+            </Collapse>
+
+            {/* Divider Line */}
+            <Divider variant='middle' />
+
+            {/* Technologies used */}
+            <CardContent>
+              <Typography variant='body2'>Technologies:</Typography>
+              <Chip variant='outlined' size='small' label='Express' />
+              <Chip variant='outlined' size='small' label='Node.js' />
+              <Chip variant='outlined' size='small' label='PostgreSQL' />
+              <Chip variant='outlined' size='small' label='Pug' />
+              <Chip variant='outlined' size='small' label='React' />
+            </CardContent>
+          </Card>
+        </Grid>
+
         {/* Restaurant management application */}
         <Grid item xs={12} component='article'>
           <Card>
@@ -176,149 +319,6 @@ export default function Header() {
               <Chip variant='outlined' size='small' label='PostgreSQL' />
               <Chip variant='outlined' size='small' label='React' />
               <Chip variant='outlined' size='small' label='Redux' />
-            </CardContent>
-          </Card>
-        </Grid>
-
-        {/* Quiz app - Pug front end */}
-        <Grid item xs={12} sm={6} component='article'>
-          <Card>
-            {/* Project image */}
-            <CardMedia
-              component='img'
-              height='140'
-              image={project3}
-              alt='Image of quiz application code'
-              title='Image of quiz application code'
-            />
-
-            {/* Title and short description of project */}
-            <CardContent>
-              <Typography gutterBottom variant='h5' component='h3'>
-                Quiz Application (Express | Pug)
-              </Typography>
-              <Typography variant='body2' color='textSecondary' component='p'>
-                A RESTful API with public and private routes that allows users
-                to create quizzes with questions and answers. This variation of
-                the quiz application features two separate servers, one for the
-                REST API and one for the front end. The front end is built using
-                the template engine Pug.js and features JSON web token(JWT)
-                authentication for all protected routes. A RESTful API with
-                public and private routes that allows users to create quizzes
-                with questions and answers. This variation uses the same back
-                end as the previous implementation, but no longer uses the web
-                server and instead features a React front end making use of
-                React PropTypes and a higher order container(HOC) responsible
-                for making API calls.
-              </Typography>
-            </CardContent>
-
-            {/* Links and expand content buttons */}
-            <CardActions>
-              <IconButton
-                color='inherit'
-                aria-label='open github page'
-                href='https://github.com/JonDunlap/asl_quiz_base-JonDunlap'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <GitHubIcon />
-              </IconButton>
-              {/* Expand card content */}
-              <IconButton
-                className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded2,
-                })}
-                color='inherit'
-                onClick={handleExpand2Click}
-                aria-expanded={expanded2}
-                aria-label='show more'
-              >
-                <ExpandMoreIcon />
-              </IconButton>
-            </CardActions>
-
-            {/* Collapsed content, detailed description of project */}
-            <Collapse in={expanded2} timeout='auto' unmountOnExit>
-              <CardContent>
-                {/* Purpose of the project */}
-                <Typography paragraph variant='body2'>
-                  Purpose:
-                </Typography>
-                <Typography paragraph variant='body2' color='textSecondary'>
-                  This project was for class and it was my first real project
-                  making use of Node.js and Express.js. This was the first
-                  project where we built out a server for handling the API as
-                  well as a web server for the front end. The first step of this
-                  project was to design the branding and theme that would be
-                  used throughout the front end, then we designed and built out
-                  the API including the routes and models needed for full CRUD
-                  functionality. Once the API was built out we switched over to
-                  creating the front end, we were provided with HTML files that
-                  we then converted into Pug templates and created the routes
-                  for the web server that would show the appropriate pages. For
-                  a subsequent assignment we converted the front end to React
-                  instead of using the web server. This is also the first time
-                  that I learned and made use of higher order components to
-                  handle separation of concerns for my react components and for
-                  the API interactions.
-                </Typography>
-
-                {/* Outcome of the project */}
-                <Typography paragraph variant='body2'>
-                  Outcome:
-                </Typography>
-                <Typography paragraph variant='body2' color='textSecondary'>
-                  With the tight integration of the API and web server, we were
-                  able to add authenticated routes on both the back and front
-                  ends of the application using Pug to create the page
-                  templates. We also made use of oAuth in the form of GitHub
-                  login and made use of JSON web tokens(JWT) for authentication
-                  and authorization on the servers. This is one project that I
-                  was particularly proud of since everything came together very
-                  nicely and I was able to make the authentication function as
-                  intended protecting the routes on the server. For the React
-                  version, with the separation of the servers, we are now using
-                  higher order components to handle the API interactions with
-                  the server and passing the returned data as props to the main
-                  component. Since we are now making API calls from the browser
-                  we also had to implement cross-origin resource sharing(CORS)
-                  to prevent errors when requesting data from our API. I was
-                  able to convert the Pug templates into React components and to
-                  keep the same functionality in almost all instances.
-                </Typography>
-
-                {/* Issues with the project */}
-                <Typography paragraph variant='body2'>
-                  Issues:
-                </Typography>
-                <Typography paragraph variant='body2' color='textSecondary'>
-                  Overall, there are very few issues, the styling is not the
-                  greatest and is something I want to continue improving on,
-                  there are also some instances where error handling is not
-                  working properly and the whole server will crash depending on
-                  what is sent to it. The React version of the application
-                  unfortunately loses the protected routes on the front end and
-                  there are some issues with components not updating properly to
-                  change state. This is something that I would like to revisit
-                  eventually as I have now learned how to add protected routes
-                  using Redux for the front end and could easily implement the
-                  same behavior as the web server version of this application.
-                </Typography>
-              </CardContent>
-            </Collapse>
-
-            {/* Divider Line */}
-            <Divider variant='middle' />
-
-            {/* Technologies used */}
-            <CardContent>
-              <Typography variant='body2'>Technologies:</Typography>
-              <Chip variant='outlined' size='small' label='Express' />
-              <Chip variant='outlined' size='small' label='Node.js' />
-              <Chip variant='outlined' size='small' label='PostgreSQL' />
-              <Chip variant='outlined' size='small' label='Pug' />
-              <Chip variant='outlined' size='small' label='React' />
             </CardContent>
           </Card>
         </Grid>
