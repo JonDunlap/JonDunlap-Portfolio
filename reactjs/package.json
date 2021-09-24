@@ -35,7 +35,7 @@
   "private": true,
   "scripts": {
     "build": "react-scripts build",
-    "deploy": "gh-pages -d build",
+    "deploy": "echo 'jondunlap.com' > ./build/CNAME && gh-pages -d build",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "start": "react-scripts start",
