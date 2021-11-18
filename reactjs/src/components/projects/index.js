@@ -16,7 +16,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import GitHubIcon from '@material-ui/icons/GitHub';
 
-import project1 from '../../images/project1.png';
+// import project1 from '../../images/project1.png';
 import project3 from '../../images/project3.png';
 
 // CSS styles for expand icon
@@ -35,12 +35,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header() {
   const classes = useStyles();
-  const [expanded1, setExpanded1] = React.useState(false);
+  // const [expanded1, setExpanded1] = React.useState(false);
   const [expanded2, setExpanded2] = React.useState(false);
   // method for expanding the content on the card
-  const handleExpand1Click = () => {
-    setExpanded1(!expanded1);
-  };
+  // const handleExpand1Click = () => {
+  //   setExpanded1(!expanded1);
+  // };
   const handleExpand2Click = () => {
     setExpanded2(!expanded2);
   };
