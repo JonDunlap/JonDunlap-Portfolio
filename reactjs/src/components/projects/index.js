@@ -71,7 +71,7 @@ export default function Header() {
             {/* Title and short description of project */}
             <CardContent>
               <Typography gutterBottom variant='h5' component='h3'>
-                Quiz Application (Express | Pug)
+                Quiz Application (Express | React/Pug)
               </Typography>
               <Typography variant='body2' color='textSecondary' component='p'>
                 A RESTful API with public and private routes that allows users
