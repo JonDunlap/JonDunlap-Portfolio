@@ -200,44 +200,44 @@ export default function Header() {
         </Grid>
 
         {/* Restaurant management application */}
-        <Grid item xs={12} component='article'>
-          <Card>
-            {/* Project image */}
-            <CardMedia
+        {/* <Grid item xs={12} component='article'> */}
+        {/* <Card> */}
+        {/* Project image */}
+        {/* <CardMedia
               component='img'
               height='140'
               image={project1}
               alt='Image of restaurant application code'
               title='Image of restaurant application code'
-            />
+            /> */}
 
-            {/* Title and short description of project */}
-            <CardContent>
-              <Typography gutterBottom variant='h5' component='h3'>
+        {/* Title and short description of project */}
+        {/* <CardContent> */}
+        {/* <Typography gutterBottom variant='h5' component='h3'>
                 Restaurant Management Application
-              </Typography>
-              <Typography variant='body2' color='textSecondary' component='p'>
+              </Typography> */}
+        {/* <Typography variant='body2' color='textSecondary' component='p'>
                 A RESTful API that is meant for a small restaurant business
                 allowing them to have a customer and staff facing interface.
                 Currently features a minimal React front end for the restaurant
                 management application with routes on the backend allowing for
                 more advanced features to be added as needed.
-              </Typography>
-            </CardContent>
+              </Typography> */}
+        {/* </CardContent> */}
 
-            {/* Links and expand content buttons */}
-            <CardActions>
-              <IconButton
+        {/* Links and expand content buttons */}
+        {/* <CardActions> */}
+        {/* <IconButton
                 color='inherit'
                 aria-label='open github page'
                 href='https://github.com/ePortfolios/WDD4416-2107-JonathanDunlap'
                 target='_blank'
                 rel='noopener noreferrer'
-              >
-                <GitHubIcon />
-              </IconButton>
-              {/* Expand card content */}
-              <IconButton
+              > */}
+        {/* <GitHubIcon /> */}
+        {/* </IconButton> */}
+        {/* Expand card content */}
+        {/* <IconButton
                 className={clsx(classes.expand, {
                   [classes.expandOpen]: expanded1,
                 })}
@@ -245,19 +245,19 @@ export default function Header() {
                 onClick={handleExpand1Click}
                 aria-expanded={expanded1}
                 aria-label='show more'
-              >
-                <ExpandMoreIcon />
-              </IconButton>
-            </CardActions>
+              > */}
+        {/* <ExpandMoreIcon /> */}
+        {/* </IconButton> */}
+        {/* </CardActions> */}
 
-            {/* Collapsed content, detailed description of project */}
-            <Collapse in={expanded1} timeout='auto' unmountOnExit>
-              <CardContent>
-                {/* Purpose of the project */}
-                <Typography paragraph variant='body2'>
+        {/* Collapsed content, detailed description of project */}
+        {/* <Collapse in={expanded1} timeout='auto' unmountOnExit> */}
+        {/* <CardContent> */}
+        {/* Purpose of the project */}
+        {/* <Typography paragraph variant='body2'>
                   Purpose:
-                </Typography>
-                <Typography paragraph variant='body2' color='textSecondary'>
+                </Typography> */}
+        {/* <Typography paragraph variant='body2' color='textSecondary'>
                   This project was the culmination of a series of capstone
                   courses that tasked me with building a fully functioning REST
                   API along with a front-end web server. The goal of the project
@@ -274,13 +274,13 @@ export default function Header() {
                   </a>{' '}
                   I began adding components and merging as the project went
                   along.
-                </Typography>
+                </Typography> */}
 
-                {/* Outcome of the project */}
-                <Typography paragraph variant='body2'>
+        {/* Outcome of the project */}
+        {/* <Typography paragraph variant='body2'>
                   Outcome:
-                </Typography>
-                <Typography paragraph variant='body2' color='textSecondary'>
+                </Typography> */}
+        {/* <Typography paragraph variant='body2' color='textSecondary'>
                   I was able to make a fully functioning back-end API server
                   that features user authentication and protected routes using
                   JSON web tokens(JWT), I created my database using PostgreSQL,
@@ -290,13 +290,13 @@ export default function Header() {
                   created automated testing and with the use of Heroku I was
                   able to set up automatic deployments fulfilling the
                   requirements for a CI/CD pipeline.
-                </Typography>
+                </Typography> */}
 
-                {/* Issues with the project */}
-                <Typography paragraph variant='body2'>
+        {/* Issues with the project */}
+        {/* <Typography paragraph variant='body2'>
                   Issues:
-                </Typography>
-                <Typography paragraph variant='body2' color='textSecondary'>
+                </Typography> */}
+        {/* <Typography paragraph variant='body2' color='textSecondary'>
                   The front-end is not complete with almost all of the routes
                   still needing to be completed and styling needing to be
                   applied to almost all of the components. There are still some
@@ -304,24 +304,24 @@ export default function Header() {
                   research on how to handle without crashing the entire API and
                   I would also like to add in additional authentication routes
                   for creating new users and handling password resets.
-                </Typography>
-              </CardContent>
-            </Collapse>
+                </Typography> */}
+        {/* </CardContent> */}
+        {/* </Collapse> */}
 
-            {/* Divider Line */}
-            <Divider variant='middle' />
+        {/* Divider Line */}
+        {/* <Divider variant='middle' /> */}
 
-            {/* Technologies used */}
-            <CardContent>
+        {/* Technologies used */}
+        {/* <CardContent>
               <Typography variant='body2'>Technologies:</Typography>
               <Chip variant='outlined' size='small' label='Express' />
               <Chip variant='outlined' size='small' label='Node.js' />
               <Chip variant='outlined' size='small' label='PostgreSQL' />
               <Chip variant='outlined' size='small' label='React' />
               <Chip variant='outlined' size='small' label='Redux' />
-            </CardContent>
-          </Card>
-        </Grid>
+            </CardContent> */}
+        {/* </Card> */}
+        {/* </Grid> */}
       </Grid>
     </Grid>
   );
