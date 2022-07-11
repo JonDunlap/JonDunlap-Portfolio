@@ -8,16 +8,16 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-		"react": "cd reactjs && npm run start"
+    "react": "cd reactjs && npm run start"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JonDunlap/WDD479-2108-JonathanDunlap.git"
+    "url": "git+https://github.com/JonDunlap/JonDunlap-Portfolio.git"
   },
   "author": "Jonathan Dunlap",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JonDunlap/WDD479-2108-JonathanDunlap/issues"
+    "url": "https://github.com/JonDunlap/JonDunlap-Portfolio/issues"
   },
-  "homepage": "https://github.com/JonDunlap/WDD479-2108-JonathanDunlap#readme"
+  "homepage": "https://github.com/JonDunlap/JonDunlap-Portfolio#readme"
 }
