@@ -14,10 +14,13 @@ import IconButton from '@material-ui/core/IconButton';
 import Collapse from '@material-ui/core/Collapse';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
+// Icons
 import GitHubIcon from '@material-ui/icons/GitHub';
+import WebIcon from '@material-ui/icons/Web';
 
-// import project1 from '../../images/project1.png';
-import project3 from '../../images/project3.png';
+// Import images
+import workoutApp from '../../images/workout-app.png';
+import quizAppCode from '../../images/quiz-app-code.png';
 
 // CSS styles for expand icon
 const useStyles = makeStyles((theme) => ({
@@ -35,12 +38,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header() {
   const classes = useStyles();
-  // const [expanded1, setExpanded1] = React.useState(false);
+  const [expanded1, setExpanded1] = React.useState(false);
   const [expanded2, setExpanded2] = React.useState(false);
   // method for expanding the content on the card
-  // const handleExpand1Click = () => {
-  //   setExpanded1(!expanded1);
-  // };
+  const handleExpand1Click = () => {
+    setExpanded1(!expanded1);
+  };
   const handleExpand2Click = () => {
     setExpanded2(!expanded2);
   };
@@ -63,7 +66,7 @@ export default function Header() {
             <CardMedia
               component='img'
               height='140'
-              image={project3}
+              image={quizAppCode}
               alt='Image of quiz application code'
               title='Image of quiz application code'
             />
@@ -199,45 +202,63 @@ export default function Header() {
           </Card>
         </Grid>
 
-        {/* Restaurant management application */}
-        {/* <Grid item xs={12} component='article'> */}
-        {/* <Card> */}
-        {/* Project image */}
-        {/* <CardMedia
+        {/* MERN Tutorial - Net Ninja */}
+        <Grid item xs={12} component='article'>
+          <Card>
+            {/* Project image */}
+            <CardMedia
               component='img'
               height='140'
-              image={project1}
-              alt='Image of restaurant application code'
-              title='Image of restaurant application code'
-            /> */}
+              image={workoutApp}
+              alt='Image of workout application website'
+              title='Image of workout application website'
+            />
 
-        {/* Title and short description of project */}
-        {/* <CardContent> */}
-        {/* <Typography gutterBottom variant='h5' component='h3'>
-                Restaurant Management Application
-              </Typography> */}
-        {/* <Typography variant='body2' color='textSecondary' component='p'>
-                A RESTful API that is meant for a small restaurant business
-                allowing them to have a customer and staff facing interface.
-                Currently features a minimal React front end for the restaurant
-                management application with routes on the backend allowing for
-                more advanced features to be added as needed.
-              </Typography> */}
-        {/* </CardContent> */}
+            {/* Title and short description of project */}
+            <CardContent>
+              <Typography gutterBottom variant='h5' component='h3'>
+                Workout Buddy - A MERN Stack Tutorial from{' '}
+                <a
+                  href='https://www.youtube.com/c/TheNetNinja'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Net Ninja
+                </a>{' '}
+                - (WIP)
+              </Typography>
+              <Typography variant='body2' color='textSecondary' component='p'>
+                A simple MERN stack application that is also hosted online using
+                Google Cloud Platform's compute engine. This application was a
+                chance for me to learn more about the MERN stack and how to
+                implement it in my own projects as well as the steps necessary
+                to actually host a web application. A demo is available by
+                clicking the web icon below.
+              </Typography>
+            </CardContent>
 
-        {/* Links and expand content buttons */}
-        {/* <CardActions> */}
-        {/* <IconButton
+            {/* Links and expand content buttons */}
+            <CardActions>
+              <IconButton
                 color='inherit'
                 aria-label='open github page'
-                href='https://github.com/ePortfolios/WDD4416-2107-JonathanDunlap'
+                href='https://github.com/JonDunlap/Net-Ninja-MERN-Stack-Tutorial'
                 target='_blank'
                 rel='noopener noreferrer'
-              > */}
-        {/* <GitHubIcon /> */}
-        {/* </IconButton> */}
-        {/* Expand card content */}
-        {/* <IconButton
+              >
+                <GitHubIcon />
+              </IconButton>
+              <IconButton
+                color='inherit'
+                aria-label='open workoutapp.jondunlap.com website'
+                href='https://workoutapp.jondunlap.com'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <WebIcon />
+              </IconButton>
+              {/* Expand card content */}
+              <IconButton
                 className={clsx(classes.expand, {
                   [classes.expandOpen]: expanded1,
                 })}
@@ -245,83 +266,83 @@ export default function Header() {
                 onClick={handleExpand1Click}
                 aria-expanded={expanded1}
                 aria-label='show more'
-              > */}
-        {/* <ExpandMoreIcon /> */}
-        {/* </IconButton> */}
-        {/* </CardActions> */}
+              >
+                <ExpandMoreIcon />
+              </IconButton>
+            </CardActions>
 
-        {/* Collapsed content, detailed description of project */}
-        {/* <Collapse in={expanded1} timeout='auto' unmountOnExit> */}
-        {/* <CardContent> */}
-        {/* Purpose of the project */}
-        {/* <Typography paragraph variant='body2'>
+            {/* Collapsed content, detailed description of project */}
+            <Collapse in={expanded1} timeout='auto' unmountOnExit>
+              <CardContent>
+                {/* Purpose of the project */}
+                <Typography paragraph variant='body2'>
                   Purpose:
-                </Typography> */}
-        {/* <Typography paragraph variant='body2' color='textSecondary'>
-                  This project was the culmination of a series of capstone
-                  courses that tasked me with building a fully functioning REST
-                  API along with a front-end web server. The goal of the project
-                  was to make use of several technologies of our choice and to
-                  create an application that would solve a problem. I chose to
-                  make a restaurant management application that could eventually
-                  be used for my mother-in-law's restaurant in Thailand to help
-                  her modernize and take advantage of online ordering. To
-                  accomplish this I settled on using Node.js and Express.js for
-                  the backend web server and used React with the Material-UI
-                  visual framework for the front-end. Making use of the{' '}
-                  <a href='https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow'>
-                    Git feature branch workflow
-                  </a>{' '}
-                  I began adding components and merging as the project went
-                  along.
-                </Typography> */}
+                </Typography>
+                <Typography paragraph variant='body2' color='textSecondary'>
+                  The overall purpose of this project was to learn more about
+                  the MERN stack as well as how to deploy web applications using
+                  an actual web server rather than the hosting platforms that I
+                  have used previously, such as Heroku and GitHub Pages. This
+                  was my first time using NGINX and I was also able to learn how
+                  to use the Google Cloud Platform compute engine to host the
+                  application on an Ubuntu VM. The application itself is a
+                  simple workout tracker that allows users to input a workout as
+                  well as view and delete their previous workouts.
+                </Typography>
 
-        {/* Outcome of the project */}
-        {/* <Typography paragraph variant='body2'>
+                {/* Outcome of the project */}
+                <Typography paragraph variant='body2'>
                   Outcome:
-                </Typography> */}
-        {/* <Typography paragraph variant='body2' color='textSecondary'>
-                  I was able to make a fully functioning back-end API server
-                  that features user authentication and protected routes using
-                  JSON web tokens(JWT), I created my database using PostgreSQL,
-                  and was able to create my models, relationships, and
-                  controllers as well as create some seed data for database
-                  testing. Making use of tools such as Postman and CircleCI I
-                  created automated testing and with the use of Heroku I was
-                  able to set up automatic deployments fulfilling the
-                  requirements for a CI/CD pipeline.
-                </Typography> */}
+                </Typography>
+                <Typography paragraph variant='body2' color='textSecondary'>
+                  Making use of Mongoose as the ODM, I was able to make a
+                  backend API that works with MongoDB's Cloud Atlas platform
+                  allowing users to create, read, update, and delete workouts
+                  with validation and error handling. On the frontend I was able
+                  to make use of React's Context, Reducer, and Effect hooks to
+                  handle the API calls and the state of the application. For the
+                  server I created an Ubuntu VM using the Google Compute Engine
+                  and was able to use NGINX as the reverse proxy to serve the
+                  application. I also setup and used a private key for
+                  connecting to the server as well as removing the root account
+                  and the ability to connect using a password so that the server
+                  could be more secure. Making use of an SSL certificate that I
+                  had available I was able to register and use a subdomain on my
+                  current website and make the website use HTTPS for a more
+                  secure connection. This was a good tutorial and I was able to
+                  take it further by actually deploying the application and
+                  making it publicly available.
+                </Typography>
 
-        {/* Issues with the project */}
-        {/* <Typography paragraph variant='body2'>
+                {/* Issues with the project */}
+                <Typography paragraph variant='body2'>
                   Issues:
-                </Typography> */}
-        {/* <Typography paragraph variant='body2' color='textSecondary'>
-                  The front-end is not complete with almost all of the routes
-                  still needing to be completed and styling needing to be
-                  applied to almost all of the components. There are still some
-                  issues with error catching on the backend that I need to
-                  research on how to handle without crashing the entire API and
-                  I would also like to add in additional authentication routes
-                  for creating new users and handling password resets.
-                </Typography> */}
-        {/* </CardContent> */}
-        {/* </Collapse> */}
+                </Typography>
+                <Typography paragraph variant='body2' color='textSecondary'>
+                  The application does not currently have any kind of
+                  authentication routes created so every user sees the same
+                  information. I will be adding authentication routes to the
+                  application so that only users with the proper credentials can
+                  access the application. I also need to look into how to better
+                  implement my routes in NGINX since I am having an issue
+                  forwarding http requests to the https port.
+                </Typography>
+              </CardContent>
+            </Collapse>
 
-        {/* Divider Line */}
-        {/* <Divider variant='middle' /> */}
-
-        {/* Technologies used */}
-        {/* <CardContent>
+            {/* Divider Line */}
+            <Divider variant='middle' />
+            {/* Technologies used */}
+            <CardContent>
               <Typography variant='body2'>Technologies:</Typography>
+              <Chip variant='outlined' size='small' label='MongoDB' />
+              <Chip variant='outlined' size='small' label='Mongoose ODM' />
               <Chip variant='outlined' size='small' label='Express' />
-              <Chip variant='outlined' size='small' label='Node.js' />
-              <Chip variant='outlined' size='small' label='PostgreSQL' />
               <Chip variant='outlined' size='small' label='React' />
-              <Chip variant='outlined' size='small' label='Redux' />
-            </CardContent> */}
-        {/* </Card> */}
-        {/* </Grid> */}
+              <Chip variant='outlined' size='small' label='Node.js' />
+            </CardContent>
+          </Card>
+        </Grid>
       </Grid>
     </Grid>
   );
