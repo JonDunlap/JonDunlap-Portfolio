@@ -59,6 +59,149 @@ export default function Header() {
         alignItems='flex-start'
         spacing={4}
       >
+        {/* MERN Tutorial - Net Ninja */}
+        <Grid item xs={12} component='article'>
+          <Card>
+            {/* Project image */}
+            <CardMedia
+              component='img'
+              height='140'
+              image={workoutApp}
+              alt='Image of workout application website'
+              title='Image of workout application website'
+            />
+
+            {/* Title and short description of project */}
+            <CardContent>
+              <Typography gutterBottom variant='h5' component='h3'>
+                Workout Buddy - A MERN Stack Tutorial from{' '}
+                <a
+                  href='https://www.youtube.com/c/TheNetNinja'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Net Ninja
+                </a>{' '}
+                - (WIP)
+              </Typography>
+              <Typography variant='body2' color='textSecondary' component='p'>
+                A simple MERN stack application that is hosted online using
+                Google Cloud Platform's compute engine VM. This application was
+                a chance for me to learn more about the MERN stack and how to
+                implement it in my own projects as well as the steps necessary
+                to actually host a web application. A demo is available by
+                clicking the web icon below.
+              </Typography>
+            </CardContent>
+
+            {/* Links and expand content buttons */}
+            <CardActions>
+              <IconButton
+                color='inherit'
+                aria-label='open github page'
+                href='https://github.com/JonDunlap/Net-Ninja-MERN-Stack-Tutorial'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <GitHubIcon />
+              </IconButton>
+              <IconButton
+                color='inherit'
+                aria-label='open workoutapp.jondunlap.com website'
+                href='https://workoutapp.jondunlap.com'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <WebIcon />
+              </IconButton>
+              {/* Expand card content */}
+              <IconButton
+                className={clsx(classes.expand, {
+                  [classes.expandOpen]: expanded1,
+                })}
+                color='inherit'
+                onClick={handleExpand1Click}
+                aria-expanded={expanded1}
+                aria-label='show more'
+              >
+                <ExpandMoreIcon />
+              </IconButton>
+            </CardActions>
+
+            {/* Collapsed content, detailed description of project */}
+            <Collapse in={expanded1} timeout='auto' unmountOnExit>
+              <CardContent>
+                {/* Purpose of the project */}
+                <Typography paragraph variant='body2'>
+                  Purpose:
+                </Typography>
+                <Typography paragraph variant='body2' color='textSecondary'>
+                  The overall purpose of this project was to learn more about
+                  the MERN stack as well as how to deploy web applications using
+                  an actual web server rather than the hosting platforms that I
+                  have used previously, such as Heroku and GitHub Pages. This
+                  was my first time using NGINX and I was also able to learn how
+                  to use the Google Cloud Platform compute engine to host the
+                  application on an Ubuntu VM. The application itself is a
+                  simple workout tracker that allows users to input a workout as
+                  well as view and delete their previous workouts.
+                </Typography>
+
+                {/* Outcome of the project */}
+                <Typography paragraph variant='body2'>
+                  Outcome:
+                </Typography>
+                <Typography paragraph variant='body2' color='textSecondary'>
+                  Making use of Mongoose as the ODM, I was able to make a
+                  backend API that works with MongoDB's Cloud Atlas platform
+                  allowing users to create, read, update, and delete workouts
+                  with validation and error handling. On the frontend I was able
+                  to make use of React's Context, Reducer, and Effect hooks to
+                  handle the API calls and the state of the application. For the
+                  server I created an Ubuntu VM using the Google Compute Engine
+                  and was able to use NGINX as the reverse proxy to serve the
+                  application. I also setup and used a private key for
+                  connecting to the server as well as removing the root account
+                  and the ability to connect using a password so that the server
+                  could be more secure. Making use of an SSL certificate that I
+                  had available I was able to register and use a subdomain on my
+                  current website and make the website use HTTPS for a more
+                  secure connection. This was a good tutorial and I was able to
+                  take it further by actually deploying the application and
+                  making it publicly available.
+                </Typography>
+
+                {/* Issues with the project */}
+                <Typography paragraph variant='body2'>
+                  Issues:
+                </Typography>
+                <Typography paragraph variant='body2' color='textSecondary'>
+                  The application does not currently have any kind of
+                  authentication routes created so every user sees the same
+                  information. I am currently in the process of adding in the
+                  authentication on both the front and back end which will allow
+                  individual users to create their own workouts and to protect
+                  routes from unauthorized users. I also need to look into how
+                  to better implement my routes in NGINX since I am having an
+                  issue forwarding http requests to the https port.
+                </Typography>
+              </CardContent>
+            </Collapse>
+
+            {/* Divider Line */}
+            <Divider variant='middle' />
+            {/* Technologies used */}
+            <CardContent>
+              <Typography variant='body2'>Technologies:</Typography>
+              <Chip variant='outlined' size='small' label='MongoDB' />
+              <Chip variant='outlined' size='small' label='Mongoose ODM' />
+              <Chip variant='outlined' size='small' label='Express' />
+              <Chip variant='outlined' size='small' label='React' />
+              <Chip variant='outlined' size='small' label='Node.js' />
+            </CardContent>
+          </Card>
+        </Grid>
+
         {/* Quiz app */}
         <Grid item xs={12} component='article'>
           <Card>
@@ -198,148 +341,6 @@ export default function Header() {
               <Chip variant='outlined' size='small' label='PostgreSQL' />
               <Chip variant='outlined' size='small' label='Pug' />
               <Chip variant='outlined' size='small' label='React' />
-            </CardContent>
-          </Card>
-        </Grid>
-
-        {/* MERN Tutorial - Net Ninja */}
-        <Grid item xs={12} component='article'>
-          <Card>
-            {/* Project image */}
-            <CardMedia
-              component='img'
-              height='140'
-              image={workoutApp}
-              alt='Image of workout application website'
-              title='Image of workout application website'
-            />
-
-            {/* Title and short description of project */}
-            <CardContent>
-              <Typography gutterBottom variant='h5' component='h3'>
-                Workout Buddy - A MERN Stack Tutorial from{' '}
-                <a
-                  href='https://www.youtube.com/c/TheNetNinja'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  Net Ninja
-                </a>{' '}
-                - (WIP)
-              </Typography>
-              <Typography variant='body2' color='textSecondary' component='p'>
-                A simple MERN stack application that is also hosted online using
-                Google Cloud Platform's compute engine. This application was a
-                chance for me to learn more about the MERN stack and how to
-                implement it in my own projects as well as the steps necessary
-                to actually host a web application. A demo is available by
-                clicking the web icon below.
-              </Typography>
-            </CardContent>
-
-            {/* Links and expand content buttons */}
-            <CardActions>
-              <IconButton
-                color='inherit'
-                aria-label='open github page'
-                href='https://github.com/JonDunlap/Net-Ninja-MERN-Stack-Tutorial'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <GitHubIcon />
-              </IconButton>
-              <IconButton
-                color='inherit'
-                aria-label='open workoutapp.jondunlap.com website'
-                href='https://workoutapp.jondunlap.com'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <WebIcon />
-              </IconButton>
-              {/* Expand card content */}
-              <IconButton
-                className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded1,
-                })}
-                color='inherit'
-                onClick={handleExpand1Click}
-                aria-expanded={expanded1}
-                aria-label='show more'
-              >
-                <ExpandMoreIcon />
-              </IconButton>
-            </CardActions>
-
-            {/* Collapsed content, detailed description of project */}
-            <Collapse in={expanded1} timeout='auto' unmountOnExit>
-              <CardContent>
-                {/* Purpose of the project */}
-                <Typography paragraph variant='body2'>
-                  Purpose:
-                </Typography>
-                <Typography paragraph variant='body2' color='textSecondary'>
-                  The overall purpose of this project was to learn more about
-                  the MERN stack as well as how to deploy web applications using
-                  an actual web server rather than the hosting platforms that I
-                  have used previously, such as Heroku and GitHub Pages. This
-                  was my first time using NGINX and I was also able to learn how
-                  to use the Google Cloud Platform compute engine to host the
-                  application on an Ubuntu VM. The application itself is a
-                  simple workout tracker that allows users to input a workout as
-                  well as view and delete their previous workouts.
-                </Typography>
-
-                {/* Outcome of the project */}
-                <Typography paragraph variant='body2'>
-                  Outcome:
-                </Typography>
-                <Typography paragraph variant='body2' color='textSecondary'>
-                  Making use of Mongoose as the ODM, I was able to make a
-                  backend API that works with MongoDB's Cloud Atlas platform
-                  allowing users to create, read, update, and delete workouts
-                  with validation and error handling. On the frontend I was able
-                  to make use of React's Context, Reducer, and Effect hooks to
-                  handle the API calls and the state of the application. For the
-                  server I created an Ubuntu VM using the Google Compute Engine
-                  and was able to use NGINX as the reverse proxy to serve the
-                  application. I also setup and used a private key for
-                  connecting to the server as well as removing the root account
-                  and the ability to connect using a password so that the server
-                  could be more secure. Making use of an SSL certificate that I
-                  had available I was able to register and use a subdomain on my
-                  current website and make the website use HTTPS for a more
-                  secure connection. This was a good tutorial and I was able to
-                  take it further by actually deploying the application and
-                  making it publicly available.
-                </Typography>
-
-                {/* Issues with the project */}
-                <Typography paragraph variant='body2'>
-                  Issues:
-                </Typography>
-                <Typography paragraph variant='body2' color='textSecondary'>
-                  The application does not currently have any kind of
-                  authentication routes created so every user sees the same
-                  information. I will be adding authentication routes to the
-                  application so that only users with the proper credentials can
-                  access the application. I also need to look into how to better
-                  implement my routes in NGINX since I am having an issue
-                  forwarding http requests to the https port.
-                </Typography>
-              </CardContent>
-            </Collapse>
-
-            {/* Divider Line */}
-            <Divider variant='middle' />
-            {/* Technologies used */}
-            <CardContent>
-              <Typography variant='body2'>Technologies:</Typography>
-              <Chip variant='outlined' size='small' label='MongoDB' />
-              <Chip variant='outlined' size='small' label='Mongoose ODM' />
-              <Chip variant='outlined' size='small' label='Express' />
-              <Chip variant='outlined' size='small' label='React' />
-              <Chip variant='outlined' size='small' label='Node.js' />
             </CardContent>
           </Card>
         </Grid>
