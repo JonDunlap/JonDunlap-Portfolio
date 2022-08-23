@@ -81,16 +81,19 @@ export default function Header() {
                   rel='noopener noreferrer'
                 >
                   Net Ninja
-                </a>{' '}
-                - (WIP)
+                </a>
               </Typography>
               <Typography variant='body2' color='textSecondary' component='p'>
                 A simple MERN stack application that is hosted online using
                 Google Cloud Platform's compute engine VM. This application was
                 a chance for me to learn more about the MERN stack and how to
                 implement it in my own projects as well as the steps necessary
-                to actually host a web application. A demo is available by
-                clicking the web icon below.
+                to actually host a web application. The application makes use of
+                JSON web tokens (JWT) as well as making use of the browsers
+                local storage to authenticate and store the user data for their
+                current session. All routes on both the frontend and backend are
+                authenticated to prevent unauthorized access. A demo is
+                available by clicking the web icon below.
               </Typography>
             </CardContent>
 
@@ -176,14 +179,9 @@ export default function Header() {
                   Issues:
                 </Typography>
                 <Typography paragraph variant='body2' color='textSecondary'>
-                  The application does not currently have any kind of
-                  authentication routes created so every user sees the same
-                  information. I am currently in the process of adding in the
-                  authentication on both the front and back end which will allow
-                  individual users to create their own workouts and to protect
-                  routes from unauthorized users. I also need to look into how
-                  to better implement my routes in NGINX since I am having an
-                  issue forwarding http requests to the https port.
+                  I need to look into how to better implement my routes in NGINX
+                  since I am having an issue forwarding http requests to the
+                  https port.
                 </Typography>
               </CardContent>
             </Collapse>
