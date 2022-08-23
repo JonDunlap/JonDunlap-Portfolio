@@ -84,16 +84,23 @@ export default function Header() {
                 </a>
               </Typography>
               <Typography variant='body2' color='textSecondary' component='p'>
-                A simple MERN stack application that is hosted online using
-                Google Cloud Platform's compute engine VM. This application was
-                a chance for me to learn more about the MERN stack and how to
-                implement it in my own projects as well as the steps necessary
-                to actually host a web application. The application makes use of
-                JSON web tokens (JWT) as well as making use of the browsers
-                local storage to authenticate and store the user data for their
-                current session. All routes on both the frontend and backend are
-                authenticated to prevent unauthorized access. A demo is
-                available by clicking the web icon below.
+                A simple MERN application that allows a user to add and remove
+                workouts, with authentication and routes for individual users to
+                create their own workouts. The backend makes use of Mongoose to
+                talk to the MongoDB database as well as to authenticate that all
+                data being passed to the controllers is valid, if it is not
+                valid, an error will be presented to the user as well as using
+                CSS to highlight the required fields. On the frontend it makes
+                use of React useContext to interact with the API depending on
+                the context that is passed to the reducer and carrying out the
+                necessary request and then updating the state. The application
+                makes use of JSON web tokens (JWT) as well as making use of the
+                browsers local storage to authenticate and store the user data
+                for their current session. I also wanted to learn more about
+                actually hosting a MERN application and to the end the
+                application is hosted online using Google Cloud Platform's
+                compute engine VM. A demo is available by clicking the web icon
+                below.
               </Typography>
             </CardContent>
 
@@ -139,15 +146,20 @@ export default function Header() {
                   Purpose:
                 </Typography>
                 <Typography paragraph variant='body2' color='textSecondary'>
-                  The overall purpose of this project was to learn more about
-                  the MERN stack as well as how to deploy web applications using
-                  an actual web server rather than the hosting platforms that I
-                  have used previously, such as Heroku and GitHub Pages. This
-                  was my first time using NGINX and I was also able to learn how
-                  to use the Google Cloud Platform compute engine to host the
-                  application on an Ubuntu VM. The application itself is a
-                  simple workout tracker that allows users to input a workout as
-                  well as view and delete their previous workouts.
+                  This application was a chance for me to learn more about the
+                  MERN stack and how to implement it in my own projects as well
+                  as the steps necessary to actually host a web application.
+                  This presented me with a chance to learn how to deploy web
+                  applications using an actual web server rather than the
+                  hosting platforms that I have used previously, such as Heroku
+                  and GitHub Pages. This was my first time using NGINX and I was
+                  also able to learn how to use the Google Cloud Platform
+                  compute engine to host the application on an Ubuntu VM. The
+                  application itself is a simple workout tracker that allows
+                  users to input a workout as well as view and delete their
+                  previous workouts and I was able to implement authentication
+                  on the routes to protect the application and the data from
+                  unauthorized access.
                 </Typography>
 
                 {/* Outcome of the project */}
