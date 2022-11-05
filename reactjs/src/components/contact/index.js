@@ -27,14 +27,14 @@ export default function Header() {
         alignItems='center'
       >
         <Grid item>
-          <Link
+          {/* <Link
             href='mailto:jon@jondunlap.com?subject=Mail from Jon Dunlap portfolio site'
             className={styles.link}
             color='inherit'
             underline='none'
           >
             Email
-          </Link>
+          </Link> */}
         </Grid>
 
         <Grid item>
