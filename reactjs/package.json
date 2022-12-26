@@ -34,8 +34,8 @@
   "name": "reactjs",
   "private": true,
   "scripts": {
-    "build": "NODE_OPTIONS='--openssl-legacy-provider' react-scripts build",
-    "deploy": "echo 'jondunlap.com' > ./build/CNAME && gh-pages -d build",
+    "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "start": "NODE_OPTIONS='--openssl-legacy-provider' react-scripts start -p 4000",
