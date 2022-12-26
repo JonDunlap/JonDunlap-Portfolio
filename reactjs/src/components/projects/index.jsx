@@ -1,6 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
+// import { makeStyles } from '@material-ui/core/styles';
+// import clsx from 'clsx';
 
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -11,8 +11,8 @@ import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
-import Collapse from '@material-ui/core/Collapse';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+// import Collapse from '@material-ui/core/Collapse';
+// import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 // Icons
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -20,33 +20,34 @@ import WebIcon from '@material-ui/icons/Web';
 
 // Import images
 import workoutApp from '../../images/workout-app.png';
-import quizAppCode from '../../images/quiz-app-code.png';
+import ersApp from '../../images/ers-app.png';
+// import quizAppCode from '../../images/quiz-app-code.png';
 
 // CSS styles for expand icon
-const useStyles = makeStyles((theme) => ({
-  expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expandOpen: {
-    transform: 'rotate(180deg)',
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   expand: {
+//     transform: 'rotate(0deg)',
+//     marginLeft: 'auto',
+//     transition: theme.transitions.create('transform', {
+//       duration: theme.transitions.duration.shortest,
+//     }),
+//   },
+//   expandOpen: {
+//     transform: 'rotate(180deg)',
+//   },
+// }));
 
 export default function Header() {
-  const classes = useStyles();
-  const [expanded1, setExpanded1] = React.useState(false);
-  const [expanded2, setExpanded2] = React.useState(false);
+  // const classes = useStyles();
+  // const [expanded1, setExpanded1] = React.useState(true);
+  // const [expanded2, setExpanded2] = React.useState(true);
   // method for expanding the content on the card
-  const handleExpand1Click = () => {
-    setExpanded1(!expanded1);
-  };
-  const handleExpand2Click = () => {
-    setExpanded2(!expanded2);
-  };
+  // const handleExpand1Click = () => {
+  //   setExpanded1(!expanded1);
+  // };
+  // const handleExpand2Click = () => {
+  //   setExpanded2(!expanded2);
+  // };
 
   return (
     <Grid item id='projects' component='section'>
@@ -59,7 +60,134 @@ export default function Header() {
         alignItems='flex-start'
         spacing={4}
       >
-        {/* MERN Tutorial - Net Ninja */}
+        {/* ERS Java Application */}
+        <Grid item xs={12} component='article'>
+          <Card>
+            {/* Project image */}
+            <CardMedia
+              component='img'
+              height='140'
+              image={ersApp}
+              alt='Image of employee reimbursement system application code'
+              title='Image of employee reimbursement system application code'
+            />
+
+            {/* Title and short description of project */}
+            <CardContent>
+              <Typography gutterBottom variant='h5' component='h3'>
+                Expense Reimbursement System - Java Backend
+              </Typography>
+              <Typography variant='body2' color='textSecondary' component='p'>
+                The overall goal of this project was to build a better
+                understanding of the fundamentals of software development.
+                Specifically, the purpose was to build an application that is
+                meant to be an expense reimbursement system for employees
+                allowing them to create tickets for reimbursement that will then
+                either be approved or denied by a manager. Some of the
+                technologies and packages that were used for this project were:
+                Maven for project and dependency management, Javalin for
+                creating the REST API along with SLF4J for logging and Jackson
+                for parsing JSON. It also makes use of Docker for the
+                containerization of the PostgreSQL database and uses the JDBC
+                along with the PostgreSQL JDBC Driver to create connections
+                between the Java application and the database. Testing has been
+                added using JUnit and Mockito for testing and mocking unit
+                tests, although no tests are currently implemented I have
+                included these packages so that it can be added at a later time.
+              </Typography>
+            </CardContent>
+
+            {/* Links and expand content buttons */}
+            <CardActions>
+              <IconButton
+                color='inherit'
+                aria-label='open github page'
+                href='https://github.com/JonDunlap/Java_ERS_Backend'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <GitHubIcon />
+              </IconButton>
+            </CardActions>
+
+            <CardContent>
+              {/* Purpose of the project */}
+              <Typography paragraph variant='body2'>
+                Purpose:
+              </Typography>
+              <Typography paragraph variant='body2' color='textSecondary'>
+                The Expense Reimbursement System will manage the process of
+                reimbursing employees for expenses incurred while on company
+                time. All employees in the company can login and submit requests
+                for reimbursement and view their past tickets and pending
+                requests. Finance managers can log in and view all reimbursement
+                requests and history for all employees in the company. Finance
+                managers are authorized to approve and deny requests for expense
+                reimbursement. Mandatory Requirements An Employee can: • Login.
+                • View the employee home page. • Submit a reimbursement request.
+                • View their pending reimbursement requests. • View their
+                resolved reimbursement requests. A Manager can: • Login. • View
+                the manager home page. • Approve/Deny pending reimbursement
+                requests. • View all pending requests of all employees. • View
+                all resolved requests of all employees.
+              </Typography>
+              {/* Outcome of the project */}
+              <Typography paragraph variant='body2'>
+                Roles/Responsibilities:
+              </Typography>
+              <Typography paragraph variant='body2' color='textSecondary'>
+                {' '}
+                • Created PostgreSQL database in a Docker container
+              </Typography>
+              <Typography paragraph variant='body2' color='textSecondary'>
+                • Utilized Javalin to create a server for the Java application
+              </Typography>
+              <Typography paragraph variant='body2' color='textSecondary'>
+                • Utilized JDBC to connect the Java application to the database
+              </Typography>
+              <Typography variant='body2' color='textSecondary'>
+                • Created a custom registration error handler to give the user
+                an error message if a user already exists with the same email
+                during registration
+              </Typography>
+              <Typography paragraph variant='body2' color='textSecondary'>
+                • Used method overloading to handle retrieving either all user
+                tickets, or tickets with a specific status if a query parameter
+                is used
+              </Typography>
+              {/* Issues with the project */}
+              <Typography paragraph variant='body2'>
+                Issues:
+              </Typography>
+              <Typography paragraph variant='body2' color='textSecondary'>
+                Overall, there are very few issues with this application,
+                currently this only includes the backend API for this
+                application and can only be accessed using a tool like Postman.
+                There is currently an issue if a user makes a PUT/POST request
+                without a body it is causing an exception due to Jackson
+                databind not being able to handle a null body being sent, this
+                is something I would like to research and eventually fix.
+              </Typography>
+            </CardContent>
+            {/* </Collapse> */}
+
+            {/* Divider Line */}
+            <Divider variant='middle' />
+
+            {/* Technologies used */}
+            <CardContent>
+              <Typography variant='body2'>Technologies:</Typography>
+              <Chip variant='outlined' size='small' label='Javalin' />
+              <Chip variant='outlined' size='small' label='Java' />
+              <Chip variant='outlined' size='small' label='Maven' />
+              <Chip variant='outlined' size='small' label='JDBC' />
+              <Chip variant='outlined' size='small' label='PostgreSQL' />
+              <Chip variant='outlined' size='small' label='Docker' />
+            </CardContent>
+          </Card>
+        </Grid>
+
+        {/* Workout Tracker - MERN Stack Application */}
         <Grid item xs={12} component='article'>
           <Card>
             {/* Project image */}
@@ -125,7 +253,7 @@ export default function Header() {
                 <WebIcon />
               </IconButton>
               {/* Expand card content */}
-              <IconButton
+              {/* <IconButton
                 className={clsx(classes.expand, {
                   [classes.expandOpen]: expanded1,
                 })}
@@ -135,68 +263,66 @@ export default function Header() {
                 aria-label='show more'
               >
                 <ExpandMoreIcon />
-              </IconButton>
+              </IconButton> */}
             </CardActions>
 
             {/* Collapsed content, detailed description of project */}
-            <Collapse in={expanded1} timeout='auto' unmountOnExit>
-              <CardContent>
-                {/* Purpose of the project */}
-                <Typography paragraph variant='body2'>
-                  Purpose:
-                </Typography>
-                <Typography paragraph variant='body2' color='textSecondary'>
-                  This application was a chance for me to learn more about the
-                  MERN stack and how to implement it in my own projects as well
-                  as the steps necessary to actually host a web application.
-                  This presented me with a chance to learn how to deploy web
-                  applications using an actual web server rather than the
-                  hosting platforms that I have used previously, such as Heroku
-                  and GitHub Pages. This was my first time using NGINX and I was
-                  also able to learn how to use the Google Cloud Platform
-                  compute engine to host the application on an Ubuntu VM. The
-                  application itself is a simple workout tracker that allows
-                  users to input a workout as well as view and delete their
-                  previous workouts and I was able to implement authentication
-                  on the routes to protect the application and the data from
-                  unauthorized access.
-                </Typography>
+            {/* <Collapse in={expanded1} timeout='auto' unmountOnExit> */}
+            <CardContent>
+              {/* Purpose of the project */}
+              <Typography paragraph variant='body2'>
+                Purpose:
+              </Typography>
+              <Typography paragraph variant='body2' color='textSecondary'>
+                This application was a chance for me to learn more about the
+                MERN stack and how to implement it in my own projects as well as
+                the steps necessary to actually host a web application. This
+                presented me with a chance to learn how to deploy web
+                applications using an actual web server rather than the hosting
+                platforms that I have used previously, such as Heroku and GitHub
+                Pages. This was my first time using NGINX and I was also able to
+                learn how to use the Google Cloud Platform compute engine to
+                host the application on an Ubuntu VM. The application itself is
+                a simple workout tracker that allows users to input a workout as
+                well as view and delete their previous workouts and I was able
+                to implement authentication on the routes to protect the
+                application and the data from unauthorized access.
+              </Typography>
 
-                {/* Outcome of the project */}
-                <Typography paragraph variant='body2'>
-                  Outcome:
-                </Typography>
-                <Typography paragraph variant='body2' color='textSecondary'>
-                  Making use of Mongoose as the ODM, I was able to make a
-                  backend API that works with MongoDB's Cloud Atlas platform
-                  allowing users to create, read, update, and delete workouts
-                  with validation and error handling. On the frontend I was able
-                  to make use of React's Context, Reducer, and Effect hooks to
-                  handle the API calls and the state of the application. For the
-                  server I created an Ubuntu VM using the Google Compute Engine
-                  and was able to use NGINX as the reverse proxy to serve the
-                  application. I also setup and used a private key for
-                  connecting to the server as well as removing the root account
-                  and the ability to connect using a password so that the server
-                  could be more secure. Making use of an SSL certificate that I
-                  had available I was able to register and use a subdomain on my
-                  current website and make the website use HTTPS for a more
-                  secure connection. This was a good tutorial and I was able to
-                  take it further by actually deploying the application and
-                  making it publicly available.
-                </Typography>
+              {/* Outcome of the project */}
+              <Typography paragraph variant='body2'>
+                Outcome:
+              </Typography>
+              <Typography paragraph variant='body2' color='textSecondary'>
+                Making use of Mongoose as the ODM, I was able to make a backend
+                API that works with MongoDB's Cloud Atlas platform allowing
+                users to create, read, update, and delete workouts with
+                validation and error handling. On the frontend I was able to
+                make use of React's Context, Reducer, and Effect hooks to handle
+                the API calls and the state of the application. For the server I
+                created an Ubuntu VM using the Google Compute Engine and was
+                able to use NGINX as the reverse proxy to serve the application.
+                I also setup and used a private key for connecting to the server
+                as well as removing the root account and the ability to connect
+                using a password so that the server could be more secure. Making
+                use of an SSL certificate that I had available I was able to
+                register and use a subdomain on my current website and make the
+                website use HTTPS for a more secure connection. This was a good
+                tutorial and I was able to take it further by actually deploying
+                the application and making it publicly available.
+              </Typography>
 
-                {/* Issues with the project */}
-                <Typography paragraph variant='body2'>
-                  Issues:
-                </Typography>
-                <Typography paragraph variant='body2' color='textSecondary'>
-                  I need to look into how to better implement my routes in NGINX
-                  since I am having an issue forwarding http requests to the
-                  https port.
-                </Typography>
-              </CardContent>
-            </Collapse>
+              {/* Issues with the project */}
+              <Typography paragraph variant='body2'>
+                Issues:
+              </Typography>
+              <Typography paragraph variant='body2' color='textSecondary'>
+                I need to look into how to better implement my routes in NGINX
+                since I am having an issue forwarding HTTP requests to the HTTPS
+                port.
+              </Typography>
+            </CardContent>
+            {/* </Collapse> */}
 
             {/* Divider Line */}
             <Divider variant='middle' />
@@ -208,149 +334,6 @@ export default function Header() {
               <Chip variant='outlined' size='small' label='Express' />
               <Chip variant='outlined' size='small' label='React' />
               <Chip variant='outlined' size='small' label='Node.js' />
-            </CardContent>
-          </Card>
-        </Grid>
-
-        {/* Quiz app */}
-        <Grid item xs={12} component='article'>
-          <Card>
-            {/* Project image */}
-            <CardMedia
-              component='img'
-              height='140'
-              image={quizAppCode}
-              alt='Image of quiz application code'
-              title='Image of quiz application code'
-            />
-
-            {/* Title and short description of project */}
-            <CardContent>
-              <Typography gutterBottom variant='h5' component='h3'>
-                Quiz Application (Express | React/Pug)
-              </Typography>
-              <Typography variant='body2' color='textSecondary' component='p'>
-                A RESTful API with public and private routes that allows users
-                to create quizzes with questions and answers. The application
-                features two separate servers, one for the REST API and one for
-                the front end, there is also a separate front end that was built
-                for a later assignment using React. The original front end is
-                built using the template engine Pug.js and features JSON web
-                token(JWT) authentication for all protected routes. The second
-                version of the front end uses the same back end as the previous
-                implementation, but no longer uses the web server and instead
-                features a React front end making use of React PropTypes,
-                useEffect, and a higher order component(HOC) responsible for
-                making API calls.
-              </Typography>
-            </CardContent>
-
-            {/* Links and expand content buttons */}
-            <CardActions>
-              <IconButton
-                color='inherit'
-                aria-label='open github page'
-                href='https://github.com/JonDunlap/asl_quiz_base-JonDunlap'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <GitHubIcon />
-              </IconButton>
-              {/* Expand card content */}
-              <IconButton
-                className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded2,
-                })}
-                color='inherit'
-                onClick={handleExpand2Click}
-                aria-expanded={expanded2}
-                aria-label='show more'
-              >
-                <ExpandMoreIcon />
-              </IconButton>
-            </CardActions>
-
-            {/* Collapsed content, detailed description of project */}
-            <Collapse in={expanded2} timeout='auto' unmountOnExit>
-              <CardContent>
-                {/* Purpose of the project */}
-                <Typography paragraph variant='body2'>
-                  Purpose:
-                </Typography>
-                <Typography paragraph variant='body2' color='textSecondary'>
-                  This project was for class and it was my first real project
-                  making use of Node.js and Express.js. This was the first
-                  project where we built out a server for handling the API as
-                  well as a web server for the front end. The first step of this
-                  project was to design the branding and theme that would be
-                  used throughout the front end, then we designed and built out
-                  the API including the routes and models needed for full CRUD
-                  functionality. Once the API was built out we switched over to
-                  creating the front end, we were provided with HTML files that
-                  we then converted into Pug templates and created the routes
-                  for the web server that would show the appropriate pages. For
-                  a subsequent assignment we converted the front end to React
-                  instead of using the web server. This is also the first time
-                  that I learned and made use of higher order components to
-                  handle separation of concerns for my react components and for
-                  the API interactions.
-                </Typography>
-
-                {/* Outcome of the project */}
-                <Typography paragraph variant='body2'>
-                  Outcome:
-                </Typography>
-                <Typography paragraph variant='body2' color='textSecondary'>
-                  With the tight integration of the API and web server, we were
-                  able to add authenticated routes on both the back and front
-                  ends of the application using Pug to create the page
-                  templates. We also made use of oAuth in the form of GitHub
-                  login and made use of JSON web tokens(JWT) for authentication
-                  and authorization on the servers. This is one project that I
-                  was particularly proud of since everything came together very
-                  nicely and I was able to make the authentication function as
-                  intended protecting the routes on the server. For the React
-                  version, with the separation of the servers, we are now using
-                  higher order components to handle the API interactions with
-                  the server and passing the returned data as props to the main
-                  component. Since we are now making API calls from the browser
-                  we also had to implement cross-origin resource sharing(CORS)
-                  to prevent errors when requesting data from our API. I was
-                  able to convert the Pug templates into React components and to
-                  keep the same functionality in almost all instances.
-                </Typography>
-
-                {/* Issues with the project */}
-                <Typography paragraph variant='body2'>
-                  Issues:
-                </Typography>
-                <Typography paragraph variant='body2' color='textSecondary'>
-                  Overall, there are very few issues, the styling is not the
-                  greatest and is something I want to continue improving on,
-                  there are also some instances where error handling is not
-                  working properly and the whole server will crash depending on
-                  what is sent to it. The React version of the application
-                  unfortunately loses the protected routes on the front end and
-                  there are some issues with components not updating properly to
-                  change state. This is something that I would like to revisit
-                  eventually as I have now learned how to add protected routes
-                  using Redux for the front end and could easily implement the
-                  same behavior as the web server version of this application.
-                </Typography>
-              </CardContent>
-            </Collapse>
-
-            {/* Divider Line */}
-            <Divider variant='middle' />
-
-            {/* Technologies used */}
-            <CardContent>
-              <Typography variant='body2'>Technologies:</Typography>
-              <Chip variant='outlined' size='small' label='Express' />
-              <Chip variant='outlined' size='small' label='Node.js' />
-              <Chip variant='outlined' size='small' label='PostgreSQL' />
-              <Chip variant='outlined' size='small' label='Pug' />
-              <Chip variant='outlined' size='small' label='React' />
             </CardContent>
           </Card>
         </Grid>
