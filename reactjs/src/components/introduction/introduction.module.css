@@ -1,3 +1,7 @@
+.h3_alternate {
+  color: var(--text-color);
+}
+
 .caret {
   color: var(--text-color);
   animation: blink-caret 1s step-end infinite;

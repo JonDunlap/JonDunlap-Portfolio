@@ -28,7 +28,7 @@ export default function Header() {
         </Grid>
       </Grid>
 
-      <Grid item component='h3' className='h3-alternate'>
+      <Grid item component='h3' className={styles.h3_alternate}>
         Web Developer
       </Grid>
     </Grid>

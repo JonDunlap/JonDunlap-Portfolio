@@ -32,10 +32,6 @@ h3 {
   font-family: var(--secondary-font-family);
 }
 
-.h3-alternate {
-  color: var(--text-color);
-}
-
 ul {
   list-style: none;
 }
