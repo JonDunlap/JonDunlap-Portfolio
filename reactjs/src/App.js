@@ -18,8 +18,8 @@ export default function App() {
           <Header />
           <Grid item container component='main' spacing={4}>
             <Introduction />
-            <Projects />
             <About />
+            <Projects />
           </Grid>
           <Contact />
         </Grid>
