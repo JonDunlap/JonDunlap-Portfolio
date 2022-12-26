@@ -26,16 +26,16 @@ export default function Header() {
         justifyContent='space-evenly'
         alignItems='center'
       >
-        {/* <Grid item>
+        <Grid item>
           <Link
-            href='mailto:jon@jondunlap.com?subject=Mail from Jon Dunlap portfolio site'
+            href='mailto:jon@jondunlap.com'
             className={styles.link}
             color='inherit'
             underline='none'
           >
             Email
           </Link>
-        </Grid> */}
+        </Grid>
 
         <Grid item>
           <Link
