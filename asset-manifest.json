@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/static/css/main.bfea0ce1.chunk.css",
-    "main.js": "/static/js/main.b7eb8428.chunk.js",
-    "main.js.map": "/static/js/main.b7eb8428.chunk.js.map",
+    "main.js": "/static/js/main.d66d04b8.chunk.js",
+    "main.js.map": "/static/js/main.d66d04b8.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7836d5b3.js",
     "runtime-main.js.map": "/static/js/runtime-main.7836d5b3.js.map",
-    "static/js/2.143e7088.chunk.js": "/static/js/2.143e7088.chunk.js",
-    "static/js/2.143e7088.chunk.js.map": "/static/js/2.143e7088.chunk.js.map",
+    "static/js/2.67a090ee.chunk.js": "/static/js/2.67a090ee.chunk.js",
+    "static/js/2.67a090ee.chunk.js.map": "/static/js/2.67a090ee.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.bfea0ce1.chunk.css.map": "/static/css/main.bfea0ce1.chunk.css.map",
-    "static/js/2.143e7088.chunk.js.LICENSE.txt": "/static/js/2.143e7088.chunk.js.LICENSE.txt",
+    "static/js/2.67a090ee.chunk.js.LICENSE.txt": "/static/js/2.67a090ee.chunk.js.LICENSE.txt",
     "static/media/ers-app.f91929b2.png": "/static/media/ers-app.f91929b2.png",
     "static/media/workout-app.a2a8230a.png": "/static/media/workout-app.a2a8230a.png"
   },
   "entrypoints": [
     "static/js/runtime-main.7836d5b3.js",
-    "static/js/2.143e7088.chunk.js",
+    "static/js/2.67a090ee.chunk.js",
     "static/css/main.bfea0ce1.chunk.css",
-    "static/js/main.b7eb8428.chunk.js"
+    "static/js/main.d66d04b8.chunk.js"
   ]
 }
