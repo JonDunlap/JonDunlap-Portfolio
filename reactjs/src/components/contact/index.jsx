@@ -62,6 +62,18 @@ export default function Header() {
             LinkedIn
           </Link>
         </Grid>
+        <Grid item>
+          <Link
+            href='https://standardresume.co/r/jondunlap'
+            target='_blank'
+            rel='noopener noreferrer'
+            className={styles.link}
+            color='inherit'
+            underline='none'
+          >
+            Résumé
+          </Link>
+        </Grid>
       </Grid>
     </Grid>
   );

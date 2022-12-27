@@ -16,6 +16,15 @@ export default function NavLinks() {
       </Link>
 
       <Link
+        href='#projects'
+        className={styles.link}
+        color='inherit'
+        underline='none'
+      >
+        Projects
+      </Link>
+
+      <Link
         href='#contact'
         className={styles.link}
         color='inherit'
