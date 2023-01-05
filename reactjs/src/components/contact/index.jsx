@@ -64,7 +64,7 @@ export default function Header() {
         </Grid>
         <Grid item>
           <Link
-            href='https://standardresume.co/r/jondunlap'
+            href='https://docs.google.com/document/d/1XqnmUPqJBgUv9MQXONaLWIdv1rjAHPSTc41GBXtENUk/edit?usp=sharing'
             target='_blank'
             rel='noopener noreferrer'
             className={styles.link}
