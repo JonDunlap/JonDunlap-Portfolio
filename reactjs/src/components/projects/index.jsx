@@ -1,6 +1,4 @@
 import React from 'react';
-// import { makeStyles } from '@material-ui/core/styles';
-// import clsx from 'clsx';
 
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -10,45 +8,13 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
 import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-// import Collapse from '@material-ui/core/Collapse';
-// import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
-// Icons
-import GitHubIcon from '@material-ui/icons/GitHub';
-import WebIcon from '@material-ui/icons/Web';
+import Link from '@material-ui/core/Link';
 
 // Import images
 import workoutApp from '../../images/workout-app.png';
 import ersApp from '../../images/ers-app.png';
-// import quizAppCode from '../../images/quiz-app-code.png';
-
-// CSS styles for expand icon
-// const useStyles = makeStyles((theme) => ({
-//   expand: {
-//     transform: 'rotate(0deg)',
-//     marginLeft: 'auto',
-//     transition: theme.transitions.create('transform', {
-//       duration: theme.transitions.duration.shortest,
-//     }),
-//   },
-//   expandOpen: {
-//     transform: 'rotate(180deg)',
-//   },
-// }));
 
 export default function Header() {
-  // const classes = useStyles();
-  // const [expanded1, setExpanded1] = React.useState(true);
-  // const [expanded2, setExpanded2] = React.useState(true);
-  // method for expanding the content on the card
-  // const handleExpand1Click = () => {
-  //   setExpanded1(!expanded1);
-  // };
-  // const handleExpand2Click = () => {
-  //   setExpanded2(!expanded2);
-  // };
-
   return (
     <Grid item id='projects' component='section'>
       <h2>Projects</h2>
@@ -77,6 +43,20 @@ export default function Header() {
               <Typography gutterBottom variant='h5' component='h3'>
                 Expense Reimbursement System - Java Backend
               </Typography>
+
+              {/* Links and expand content buttons */}
+              <CardActions>
+                <Link
+                  variant='body2'
+                  aria-label='open github page'
+                  href='https://github.com/JonDunlap/Java_ERS_Backend'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  View code on GitHub
+                </Link>
+              </CardActions>
+
               <Typography variant='body2' color='textSecondary' component='p'>
                 The overall goal of this project was to build a better
                 understanding of the fundamentals of software development.
@@ -96,19 +76,6 @@ export default function Header() {
                 included these packages so that it can be added at a later time.
               </Typography>
             </CardContent>
-
-            {/* Links and expand content buttons */}
-            <CardActions>
-              <IconButton
-                color='inherit'
-                aria-label='open github page'
-                href='https://github.com/JonDunlap/Java_ERS_Backend'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <GitHubIcon />
-              </IconButton>
-            </CardActions>
 
             <CardContent>
               {/* Purpose of the project */}
@@ -211,6 +178,32 @@ export default function Header() {
                   Net Ninja
                 </a>
               </Typography>
+
+              {/* Links and expand content buttons */}
+              <CardActions>
+                <Link
+                  variant='body2'
+                  aria-label='open github page'
+                  href='https://github.com/JonDunlap/Net-Ninja-MERN-Stack-Tutorial'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  View code on GitHub
+                </Link>
+                <Typography variant='body2' color='textSecondary' component='p'>
+                  |
+                </Typography>
+                <Link
+                  variant='body2'
+                  aria-label='open workoutapp.jondunlap.com website'
+                  href='https://workoutapp.jondunlap.com'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  View live demo
+                </Link>
+              </CardActions>
+
               <Typography variant='body2' color='textSecondary' component='p'>
                 A simple MERN application that allows a user to add and remove
                 workouts, with authentication and routes for individual users to
@@ -232,42 +225,6 @@ export default function Header() {
               </Typography>
             </CardContent>
 
-            {/* Links and expand content buttons */}
-            <CardActions>
-              <IconButton
-                color='inherit'
-                aria-label='open github page'
-                href='https://github.com/JonDunlap/Net-Ninja-MERN-Stack-Tutorial'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <GitHubIcon />
-              </IconButton>
-              <IconButton
-                color='inherit'
-                aria-label='open workoutapp.jondunlap.com website'
-                href='https://workoutapp.jondunlap.com'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <WebIcon />
-              </IconButton>
-              {/* Expand card content */}
-              {/* <IconButton
-                className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded1,
-                })}
-                color='inherit'
-                onClick={handleExpand1Click}
-                aria-expanded={expanded1}
-                aria-label='show more'
-              >
-                <ExpandMoreIcon />
-              </IconButton> */}
-            </CardActions>
-
-            {/* Collapsed content, detailed description of project */}
-            {/* <Collapse in={expanded1} timeout='auto' unmountOnExit> */}
             <CardContent>
               {/* Purpose of the project */}
               <Typography paragraph variant='body2'>
