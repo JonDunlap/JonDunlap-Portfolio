@@ -64,7 +64,7 @@ export default function Header() {
         </Grid>
         <Grid item>
           <Link
-            href='https://docs.google.com/document/d/1XqnmUPqJBgUv9MQXONaLWIdv1rjAHPSTc41GBXtENUk/edit?usp=sharing'
+            href='https://docs.google.com/document/d/1VczsT0TiA-zF3bBvUxbXlEXONIxN6ngGd9DhuddU2u4/edit?usp=sharing'
             target='_blank'
             rel='noopener noreferrer'
             className={styles.link}
