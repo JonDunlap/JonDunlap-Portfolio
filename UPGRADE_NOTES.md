@@ -86,6 +86,14 @@ Build and test suite both clean after this batch.
 
 Build and test suite both clean after this batch.
 
+## Batch 2.4 — clsx: removed instead of bumped
+
+- Same situation as web-vitals: declared in `package.json` but never
+  imported anywhere in `src/`. Removed via `npm uninstall clsx` rather
+  than bumping to latest 2.x.
+
+Build and test suite both clean after this batch.
+
 ## Follow-ups (out of scope for this pass — see UPGRADE_PLAN.md)
 
 - Migrate off Create React App (`react-scripts`) — no stable release since
