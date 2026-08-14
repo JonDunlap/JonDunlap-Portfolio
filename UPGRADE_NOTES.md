@@ -64,6 +64,16 @@ Build (`npm run build`) and test (`npm test`) both clean after this batch.
 
 Build and test suite both clean after this batch.
 
+## Batch 2.2 — gh-pages 3.2.3 → 6.3.0 (major)
+
+- Vulnerabilities: 26 → 25 (critical count fixed: 1 → 0).
+- No code changes needed. CLI flags used by the `deploy` script (`-d
+  build`) are unchanged in 6.x. Deploy-only tool, isolated to `npm run
+  deploy` — doesn't touch the app bundle, so no browser verification
+  needed.
+
+Build and test suite both clean after this batch.
+
 ## Follow-ups (out of scope for this pass — see UPGRADE_PLAN.md)
 
 - Migrate off Create React App (`react-scripts`) — no stable release since
