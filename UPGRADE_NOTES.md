@@ -94,6 +94,15 @@ Build and test suite both clean after this batch.
 
 Build and test suite both clean after this batch.
 
+## Batch 2.5 — @testing-library/react 11.2.7 → 12.1.5 (major)
+
+- Capped at 12.1.5 rather than latest (16.3.2) — v13+ requires React ^18,
+  which is out of scope this pass (React stays on 17.x, see follow-ups).
+  12.x is the highest major that still supports React 17.
+- No code changes needed.
+
+Build and test suite both clean after this batch.
+
 ## Follow-ups (out of scope for this pass — see UPGRADE_PLAN.md)
 
 - Migrate off Create React App (`react-scripts`) — no stable release since
