@@ -103,6 +103,14 @@ Build and test suite both clean after this batch.
 
 Build and test suite both clean after this batch.
 
+## Batch 2.6 — @testing-library/user-event: removed instead of bumped
+
+- Same situation as web-vitals/clsx: declared but never used in any test
+  file (`App.test.js` doesn't import it). Removed via `npm uninstall`
+  rather than bumping to latest 14.x.
+
+Build and test suite both clean after this batch.
+
 ## Follow-ups (out of scope for this pass — see UPGRADE_PLAN.md)
 
 - Migrate off Create React App (`react-scripts`) — no stable release since
