@@ -4,7 +4,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
 
-import * as styles from './hamburgerMenu.module.css';
+import styles from './hamburgerMenu.module.css';
 
 export default function HamburgerMenu({ children }) {
   const [anchorEl, setAnchorEl] = useState(null);

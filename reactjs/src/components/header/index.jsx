@@ -6,7 +6,7 @@ import Hidden from '@material-ui/core/Hidden';
 import NavLinks from '../navLinks';
 import HamburgerMenu from '../hamburgerMenu';
 
-import * as styles from './header.module.css';
+import styles from './header.module.css';
 
 export default function Header() {
   return (

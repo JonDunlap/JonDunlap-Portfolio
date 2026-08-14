@@ -29,6 +29,41 @@ of this work.
 
 Build (`npm run build`) and test (`npm test`) both clean after this batch.
 
+## Batch 2.1 — react-scripts 4.0.3 → 5.0.1 (major)
+
+- Vulnerabilities: 152 → 26 (9 low, 5 moderate, 11 high, 1 critical). This
+  was the single biggest win of the whole upgrade — nearly all prior
+  findings traced back to react-scripts' webpack 4 toolchain.
+- **Code changes required** (webpack 5 / css-loader v6 breaking changes):
+  - All 5 components using CSS Modules (`contact`, `header`,
+    `hamburgerMenu`, `introduction`, `navLinks`) imported their styles as
+    `import * as styles from './x.module.css'` (namespace import).
+    Webpack 5's static export analysis for css-loader v6 output doesn't
+    recognize individual class names as named exports on a namespace
+    import, so the build failed with `Attempted import error: 'link' is
+    not exported from './contact.module.css'`. Fixed by switching all 5
+    to default imports (`import styles from './x.module.css'`), which is
+    the reliable pattern under css-loader v6 and works identically at
+    runtime.
+  - `contact.module.css` also used `composes: link from '../../App.css'`
+    — composing a CSS Modules class from a plain (non-module) global
+    stylesheet. This is fragile under css-loader v6, so the composed
+    `.link` rule (and its `:hover` state) was inlined directly into
+    `contact.module.css` instead of cross-file composition.
+- **Script change:** removed the `--openssl-legacy-provider` flag from
+  `build`/`start`. It was a workaround for webpack 4 using an OpenSSL API
+  Node 17+ removed by default — webpack 5 doesn't need it. Verified both
+  `npm run build` and `npm start` work without it.
+- **Pre-existing quirk noted, not fixed:** `npm start` is invoked as
+  `react-scripts start -p 4000`, but `-p` isn't a flag `react-scripts`
+  recognizes — the dev server always binds to the default port (3000),
+  flag or no flag. Predates this upgrade; out of scope to fix here.
+- Verified visually in a browser (dev server): layout, terminal-green
+  theme, and the Contact section's link hover states all render
+  correctly after the CSS Modules import changes.
+
+Build and test suite both clean after this batch.
+
 ## Follow-ups (out of scope for this pass — see UPGRADE_PLAN.md)
 
 - Migrate off Create React App (`react-scripts`) — no stable release since
