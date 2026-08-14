@@ -74,6 +74,18 @@ Build and test suite both clean after this batch.
 
 Build and test suite both clean after this batch.
 
+## Batch 2.3 — web-vitals: removed instead of bumped
+
+- Investigated before bumping: `web-vitals` was declared in
+  `package.json` but never imported anywhere in `src/` — no
+  `reportWebVitals.js`, no call site in `index.js`. Dead weight left over
+  from the CRA scaffold, never wired up.
+- Decision (confirmed with Jon): removed via `npm uninstall web-vitals`
+  rather than bumping to latest 6.x, since there was nothing to migrate.
+  Net simplification, not a version bump.
+
+Build and test suite both clean after this batch.
+
 ## Follow-ups (out of scope for this pass — see UPGRADE_PLAN.md)
 
 - Migrate off Create React App (`react-scripts`) — no stable release since
