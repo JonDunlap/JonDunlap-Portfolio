@@ -111,6 +111,16 @@ Build and test suite both clean after this batch.
 
 Build and test suite both clean after this batch.
 
+## Batch 2.7 — @testing-library/jest-dom: capped at 5.17.0, not bumped
+
+- Investigated bumping to latest (7.0.1) as planned, but `react-scripts`
+  5.0.1 bundles Jest **27.5.1**, and `jest-dom` 6.0.0+ requires Jest
+  `>=28`. CRA doesn't let you bump Jest independently without ejecting.
+  `5.17.0` (already installed in Batch 1) is the newest release
+  compatible with CRA's bundled Jest — nothing to change here.
+- This is the same underlying constraint (CRA pinning its toolchain
+  versions) that motivates the "migrate off CRA" follow-up below.
+
 ## Follow-ups (out of scope for this pass — see UPGRADE_PLAN.md)
 
 - Migrate off Create React App (`react-scripts`) — no stable release since
