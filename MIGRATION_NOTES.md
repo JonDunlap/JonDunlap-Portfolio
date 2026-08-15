@@ -153,3 +153,28 @@ in the prior dependency-patch pass.
   mobile collapsed + hamburger-menu-open, ScrollTop Fab button) against
   the pre-migration baseline screenshots — pixel-identical. No console
   errors.
+
+## Final integration validation
+
+All three phases merged into `migrate/vite-mui5-react18`. Re-validated
+the whole thing together, from a genuinely clean slate (`rm -rf
+node_modules build`, fresh `npm install`) rather than just clearing
+build caches, to rule out anything papered over by leftover local state:
+
+- `npm install`: 314 packages, **0 vulnerabilities**.
+- `npm run build`: clean.
+- `npm test` (Vitest): passes.
+- `npm audit`: **0 vulnerabilities** — down from the 25 remaining after
+  the prior dependency-patch pass (`UPGRADE_NOTES.md`), which itself
+  started from a baseline of 188. Everything left in that 25 was inside
+  `react-scripts`' own bundled toolchain; removing `react-scripts`
+  entirely in Phase 1 cleared all of it.
+- Full visual diff, one more time, against the original pre-migration
+  baseline screenshots: desktop top, Projects, Contact (including link
+  hover state), mobile collapsed, mobile hamburger-menu-open. Every
+  single one pixel-identical. No console errors at any point.
+
+**Not yet done:** merging this integration branch into `main`, and
+deploying. Per the ground rules for this migration, both require
+explicit sign-off — this validation pass is the gate for that decision,
+not the decision itself.
