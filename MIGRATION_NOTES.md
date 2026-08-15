@@ -122,3 +122,34 @@ in the prior dependency-patch pass.
   mobile collapsed + hamburger-menu-open, including the ScrollTop Fab
   button) against the pre-migration baseline screenshots — pixel-
   identical. No console errors.
+
+## Phase 3 — React 17 → 18
+
+- `npm install react@18 react-dom@18` (18.3.1, latest 18.x — scope stops
+  at 18, not 19). Bumped `@testing-library/react` from 12.1.5 (the ceiling
+  the prior dependency-upgrade pass was capped at, specifically because
+  v13+ requires React 18) straight to latest (16.3.2), which supports
+  both React 18 and 19.
+- `src/index.jsx`: replaced `ReactDOM.render(...)` with React 18's
+  `createRoot(...).render(...)`.
+- No other code changes needed. No StrictMode double-invoke issues
+  surfaced (React 18 double-invokes effects in dev under StrictMode,
+  which this app already wraps `<App />` in) — the one component with a
+  side effect worth watching, `ScrollTop` (a scroll-position listener via
+  `useScrollTrigger`), behaved identically.
+- `npm audit`: stayed at 0.
+- **Investigation dead-end worth recording:** during the visual check, a
+  screenshot at a resized 1400px-wide window briefly appeared to show the
+  mobile hamburger menu instead of the desktop nav — looked like a real
+  breakpoint regression at first glance. Verified via
+  `window.innerWidth` (genuinely 1400) and direct DOM inspection (the
+  desktop `<nav>` was present and correctly rendered, no hamburger button
+  existed in the DOM at all) that this was a stale/cached screenshot
+  frame captured before the window resize had fully finished — not a
+  real bug. A second screenshot immediately after showed the correct
+  desktop nav. No code changes resulted from this.
+- **Validated:** clean build, clean test run, 0 `npm audit` findings,
+  full visual diff in a real browser (desktop top/Projects/Contact,
+  mobile collapsed + hamburger-menu-open, ScrollTop Fab button) against
+  the pre-migration baseline screenshots — pixel-identical. No console
+  errors.
