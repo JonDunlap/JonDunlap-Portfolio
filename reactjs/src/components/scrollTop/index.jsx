@@ -1,11 +1,11 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 
-import Fab from '@material-ui/core/Fab';
-import Zoom from '@material-ui/core/Zoom';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import Fab from '@mui/material/Fab';
+import Zoom from '@mui/material/Zoom';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
 
-import KeyboardArrowUpIcon from '@material-ui/icons/esm/KeyboardArrowUp';
+import KeyboardArrowUpIcon from '@mui/icons-material/esm/KeyboardArrowUp';
 
 const useStyles = makeStyles((theme) => ({
   root: {
