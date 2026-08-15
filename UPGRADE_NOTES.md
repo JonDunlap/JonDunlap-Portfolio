@@ -2,9 +2,10 @@
 
 Running log of what changed and why, kept in step with `UPGRADE_PLAN.md`.
 Baseline audit (before any changes): 188 vulnerabilities (16 critical, 49
-high, 113 moderate, 10 low) — see `audit-baseline/npm-audit.txt` /
-`audit-baseline/npm-outdated.txt` for the raw output captured at the start
-of this work.
+high, 113 moderate, 10 low). Raw `npm audit`/`npm outdated` output was
+captured at the start of this work; see the `audit-baseline/` directory in
+git history (removed from the tree afterward — it was a point-in-time
+snapshot, not something worth carrying forward).
 
 ## Batch 1 — patch/minor, non-breaking
 
@@ -127,8 +128,8 @@ Full `npm run build` + `npm test` pass, run clean from a fresh
 `node_modules/.cache` (no stale-cache false positives).
 
 **`npm audit`: 188 → 25 vulnerabilities** (16 critical → 0, 49 high → 11,
-113 moderate → 5, 10 low → 9). Raw output saved to
-`audit-baseline/npm-audit-final.txt`.
+113 moderate → 5, 10 low → 9). Raw output was captured at the time; see
+git history for `audit-baseline/npm-audit-final.txt`.
 
 All 25 remaining are nested inside `react-scripts`' own bundled toolchain
 (`postcss`, `serialize-javascript`, `uuid`, `webpack-dev-server` — pulled
