@@ -1,5 +1,6 @@
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import About from './components/about';
 import Contact from './components/contact';
@@ -10,9 +11,11 @@ import ScrollTop from './components/scrollTop';
 
 import './App.css';
 
+const theme = createTheme();
+
 export default function App() {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Container>
         <Grid container direction='column' spacing={4}>
           <Header />
@@ -25,6 +28,6 @@ export default function App() {
         </Grid>
       </Container>
       <ScrollTop />
-    </>
+    </ThemeProvider>
   );
 }

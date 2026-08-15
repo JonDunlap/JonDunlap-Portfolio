@@ -1,4 +1,9 @@
-/* 
+/*
+************ FONTS ***********
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Source+Code+Pro&display=swap');
+
+/*
 ************ COLORS ***********
 */
 :root {
@@ -6,10 +11,6 @@
   --text-color: #fff;
 }
 
-/* 
-************ FONTS ***********
-*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Source+Code+Pro&display=swap');
 :root {
   --default-font-family: 'Source Code Pro', monospace;
   --secondary-font-family: 'Roboto Mono', monospace;

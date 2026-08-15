@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import IconButton from '@material-ui/core/IconButton';
-import Menu from '@material-ui/core/Menu';
-import MenuIcon from '@material-ui/icons/Menu';
+import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/esm/Menu';
 
 import styles from './hamburgerMenu.module.css';
 
@@ -23,7 +23,7 @@ export default function HamburgerMenu({ children }) {
         aria-controls='menu-navigation'
         aria-haspopup='true'
         onClick={handleMenu}
-      >
+        size="large">
         <MenuIcon
           className={styles.hamburger}
           aria-label='open drawer'
