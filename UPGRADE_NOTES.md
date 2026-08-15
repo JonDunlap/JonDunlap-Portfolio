@@ -121,6 +121,38 @@ Build and test suite both clean after this batch.
 - This is the same underlying constraint (CRA pinning its toolchain
   versions) that motivates the "migrate off CRA" follow-up below.
 
+## Final validation
+
+Full `npm run build` + `npm test` pass, run clean from a fresh
+`node_modules/.cache` (no stale-cache false positives).
+
+**`npm audit`: 188 → 25 vulnerabilities** (16 critical → 0, 49 high → 11,
+113 moderate → 5, 10 low → 9). Raw output saved to
+`audit-baseline/npm-audit-final.txt`.
+
+All 25 remaining are nested inside `react-scripts`' own bundled toolchain
+(`postcss`, `serialize-javascript`, `uuid`, `webpack-dev-server` — pulled
+in transitively via `workbox-build`, `resolve-url-loader`, `sockjs`).
+`npm audit fix --force` was checked and would actually **downgrade**
+`react-scripts` to `0.0.0` chasing these — i.e. there is no real fix
+available while staying on CRA. This is expected: it's the same
+"CRA is unmaintained" issue flagged in Step 1, now narrowed down to its
+precise blast radius. Resolving these fully requires the CRA migration
+tracked below.
+
+`npm outdated` after this pass — only the three intentionally-deferred
+packages remain behind latest:
+
+| Package | Current | Latest | Why not bumped further |
+|---|---|---|---|
+| react / react-dom | 17.0.2 | 19.2.8 | Deferred — see follow-ups |
+| @testing-library/react | 12.1.5 | 16.3.2 | v13+ requires React ^18 |
+| @testing-library/jest-dom | 5.17.0 | 7.0.1 | v6+ requires Jest ^28; CRA bundles Jest 27.5.1 |
+
+Everything else (`react-scripts`, `gh-pages`) is at its latest stable
+release. `web-vitals`, `clsx`, and `@testing-library/user-event` were
+removed as unused dead weight rather than bumped (see batches above).
+
 ## Follow-ups (out of scope for this pass — see UPGRADE_PLAN.md)
 
 - Migrate off Create React App (`react-scripts`) — no stable release since
