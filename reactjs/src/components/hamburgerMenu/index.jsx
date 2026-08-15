@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
-import MenuIcon from '@material-ui/icons/Menu';
+import MenuIcon from '@material-ui/icons/esm/Menu';
 
 import styles from './hamburgerMenu.module.css';
 
