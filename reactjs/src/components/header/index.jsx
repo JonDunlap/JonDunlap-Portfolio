@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Grid from '@material-ui/core/Grid';
-import Hidden from '@material-ui/core/Hidden';
+import Grid from '@mui/material/Grid';
+import Hidden from '@mui/material/Hidden';
 
 import NavLinks from '../navLinks';
 import HamburgerMenu from '../hamburgerMenu';
@@ -21,7 +21,7 @@ export default function Header() {
       id='top-anchor'
     >
       {/* Nav for small and up screens */}
-      <Hidden xsDown>
+      <Hidden smDown>
         <Grid
           component='nav'
           container

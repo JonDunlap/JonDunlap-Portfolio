@@ -66,3 +66,59 @@ in the prior dependency-patch pass.
   mobile collapsed + hamburger-menu-open) against the pre-migration
   baseline screenshots — pixel-identical layout, styling, and
   interactions. No console errors.
+
+## Phase 2 — Material-UI v4 → v5
+
+- `npm uninstall @material-ui/core @material-ui/icons` →
+  `@mui/material@5 @mui/icons-material@5 @emotion/react @emotion/styled
+  @mui/styles@5`. `npm audit`: stayed at 0.
+- Ran `npx @mui/codemod v5.0.0/preset-safe src` — 9 files updated
+  mechanically (import paths only), 0 errors, nothing needed hand-fixing
+  from the codemod's own output.
+- **Correction to the plan:** `Hidden` was **not** removed in v5 — it's
+  deprecated but still present and functional. The planned "rewrite with
+  `sx` responsive display" turned out to be unnecessary. The codemod
+  changed `<Hidden xsDown>` → `<Hidden smDown>` (only the first of the
+  two `Hidden` blocks in `header/index.jsx`) — this is MUI's own
+  documented fix for a v4 quirk where `Hidden`'s `xsDown` prop didn't
+  behave the way most people expected; `smDown` reproduces v4's actual
+  visual behavior exactly (same 600px switch point). Verified visually
+  in a browser: desktop nav ↔ hamburger menu switch is unchanged.
+- The codemod also added `size="large"` to the hamburger `IconButton` in
+  `hamburgerMenu/index.jsx` — v5 changed `IconButton`'s default size;
+  this preserves the original v4 visual size/padding.
+- `makeStyles` (used once, in `scrollTop/index.jsx`) was automatically
+  repointed to the `@mui/styles` compat package by the codemod, as
+  planned — no manual rewrite needed there either.
+- Icon imports (`@material-ui/icons/esm/...` from the Phase 1 fix) were
+  mechanically renamed by the codemod to `@mui/icons-material/esm/...`.
+  Kept as-is rather than reverting to the plain (non-`esm`) subpath —
+  `@mui/icons-material` also ships with no `exports` map in its
+  `package.json`, so it's exposed to the same CJS/interop risk Phase 1
+  found in the old package; the already-proven-safe `esm/` subpath was
+  the lower-risk choice, not reverted without a concrete reason to.
+- **Real bug found and fixed, not anticipated in the plan:** with MUI v5
+  installed, `makeStyles` (`@mui/styles`) crashed with `theme.spacing is
+  not a function`. Cause: this app never wrapped anything in an MUI
+  `ThemeProvider` — under v4, `makeStyles` silently fell back to a
+  complete internal default theme when none was provided. `@mui/styles`'
+  v5 compat package does not carry that same automatic fallback. Fixed
+  by adding `@mui/material/styles`' `ThemeProvider` (with
+  `createTheme()`, no custom theme values — a pure pass-through) around
+  `App.jsx`'s return value. This is also the officially recommended
+  practice for v5, not just a workaround. Placed in `App.jsx` rather than
+  `index.jsx` so `App.test.jsx`'s `render(<App />)` (which doesn't go
+  through `index.jsx`) picks it up too.
+- Re-checked the `jsdom` version pin from Phase 1 now that MUI v5 is in:
+  still needed. The app still uses `@mui/styles`' JSS engine (the same
+  one that broke under the newest jsdom in Phase 1) for its one
+  `makeStyles` call — confirmed by testing with latest jsdom again
+  (same crash) and reverting to `jsdom@24`. Worth revisiting only if
+  `scrollTop`'s single `makeStyles` usage is ever rewritten to `sx`/
+  `styled()` and `@mui/styles` is dropped entirely — not done here,
+  out of scope (this pass preserves behavior, not stack purity).
+- **Validated:** clean build, clean test run, 0 `npm audit` findings,
+  full visual diff in a real browser (desktop top/Projects/Contact,
+  mobile collapsed + hamburger-menu-open, including the ScrollTop Fab
+  button) against the pre-migration baseline screenshots — pixel-
+  identical. No console errors.
