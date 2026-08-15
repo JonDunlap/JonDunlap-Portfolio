@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from '@material-ui/core/Link';
 
-import * as styles from './navLinks.module.css';
+import styles from './navLinks.module.css';
 
 export default function NavLinks() {
   return (

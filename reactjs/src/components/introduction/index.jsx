@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 
-import * as styles from './introduction.module.css';
+import styles from './introduction.module.css';
 
 export default function Header() {
   return (

@@ -1,5 +1,11 @@
 .link {
-  composes: link from '../../App.css';
+  display: block;
+  padding: 1em 2em;
+  color: var(--text-color);
+}
+
+.link:hover {
+  color: var(--terminal-color);
 }
 
 .divider {
