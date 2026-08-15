@@ -16,7 +16,6 @@ This repo holds the code used for my personal portfolio website hosted at [jondu
 
 - `reactjs/` — the actual React application: source code, tests, and build config. All of the setup/run/test/build/deploy instructions below happen inside this directory.
 - `docs/` — original planning and marketing materials for the site (not developer documentation).
-- `MIGRATION_PLAN.md` / `MIGRATION_NOTES.md`, `UPGRADE_PLAN.md` / `UPGRADE_NOTES.md` — historical record of the dependency-upgrade and Create-React-App-to-Vite migration work, kept for reference.
 
 ## Setup
 
